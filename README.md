@@ -14,3 +14,4 @@ Identity & Governance: Entra ID users, RBAC roles, and custom policies.
 Networking: Virtual Networks (VNets), Peering, Network Security Groups (NSGs), and DNS.
 
 Compute & Storage: Virtual Machines, Blob Storage, and Azure Backup/Recovery vaults.
+
