@@ -18,6 +18,7 @@
    * **User principal name :** `usr-tech01`
    * **Display name :** `usr-tech01`
 <img width="607" height="531" alt="Capture d&#39;écran 2026-08-27 151408" src="https://github.com/user-attachments/assets/1de2d0e1-2a83-40ec-bc02-163f5eb34445" />
+
 "Vérifier + Créer" pour terminer la création du compte utilisateur.
 
 3. Définir un mot de passe temporaire et valider la création.
