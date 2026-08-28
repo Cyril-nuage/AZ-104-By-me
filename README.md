@@ -1,17 +1,17 @@
 # AZ-104-By-me
-Hands-on Azure labs and infrastructure as code scripts developed while preparing for the Microsoft AZ-104 Certif
+Exercices pratiques sur Azure et scripts « infrastructure as code » développés dans le cadre de la préparation à la certification Microsoft AZ-104
 
-Welcome to my personal Azure laboratory repository. This project documents my practical experience and custom configurations built while preparing for the Microsoft Certified: Azure Administrator Associate AZ-104 exam.
+Bienvenue dans mon référentiel personnel dédié aux laboratoires Azure. Ce projet rend compte de mon expérience pratique et des configurations personnalisées que j’ai mises en place lors de ma préparation à l’examen « Microsoft Certified : Azure Administrator Associate AZ-104 ».
 
-🎯Objectives
-Design and deploy secure cloud infrastructure using the Azure Portal, CLI, and PowerShell.
+Objectifs : Concevoir et déployer une infrastructure cloud sécurisée à l’aide du portail Azure, de l’interface de ligne de commande (CLI) et de PowerShell.
 
-Gain real-world experience in identity management, networking, storage, and compute solutions.
+Acquérir une expérience concrète en matière de gestion des identités, de mise en réseau, de stockage et de solutions de calcul.
 
-🛠️What’s Inside
-Identity & Governance: Entra ID users, RBAC roles, and custom policies.
+Contenu Identité et gouvernance : utilisateurs Entra ID, rôles RBAC et stratégies personnalisées.
 
-Networking: Virtual Networks (VNets), Peering, Network Security Groups (NSGs), and DNS.
+Réseau : réseaux virtuels (VNets), peering, groupes de sécurité réseau (NSG) et DNS.
 
-Compute & Storage: Virtual Machines, Blob Storage, and Azure Backup/Recovery vaults.
+Calcul et stockage : machines virtuelles, stockage Blob et coffres de sauvegarde/restauration Azure.
+
+Traduit avec DeepL.com (version gratuite)
 
