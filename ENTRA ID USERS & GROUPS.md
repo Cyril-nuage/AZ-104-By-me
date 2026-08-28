@@ -14,10 +14,11 @@
 <img width="1284" height="690" alt="Capture d&#39;écran 2026-08-27 145454" src="https://github.com/user-attachments/assets/344c70f8-781f-4b2e-b1a2-8d55513c1f90" />
 
 
-2. Renseigner les informations de l'utilisateur :
+2. Renseigner les informations de base de l'utilisateur, les propriétés et ses attributions :
    * **User principal name :** `usr-tech01`
    * **Display name :** `usr-tech01`
 <img width="607" height="531" alt="Capture d&#39;écran 2026-08-27 151408" src="https://github.com/user-attachments/assets/1de2d0e1-2a83-40ec-bc02-163f5eb34445" />
+"Vérifier + Créer" pour terminer la création du compte utilisateur.
 
 3. Définir un mot de passe temporaire et valider la création.
 <img width="1035" height="352" alt="Capture d&#39;écran 2026-08-27 152217" src="https://github.com/user-attachments/assets/d34d1a09-b999-4d35-8af7-ea641295acaa" />
