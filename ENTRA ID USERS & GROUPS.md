@@ -17,7 +17,7 @@
 
 
 2. Renseigner les informations de base de l'utilisateur, les propriétés et ses attributions :
-   * ** Nom d’utilisateur principal :** `usr-tech01`
+   * **Nom d’utilisateur principal :** `usr-tech01`
    * **Nom d’affichage :** `usr-tech01`
 <img width="607" height="531" alt="Capture d&#39;écran 2026-08-27 151408" src="https://github.com/user-attachments/assets/1de2d0e1-2a83-40ec-bc02-163f5eb34445" />
 
