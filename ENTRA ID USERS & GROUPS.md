@@ -11,7 +11,8 @@
 
 ### Tâche 1 : Créer et configurer des comptes utilisateurs
 1. Aller dans **Microsoft Entra ID** > **Users** > **New user** > **Create new user**.
-<img width="642" height="345" alt="Capture d&#39;écran 2026-08-27 145454" src="https://github.com/user-attachments/assets/379e084d-7c98-43cb-9c5b-2fce3c449033" />
+<img width="1284" height="690" alt="Capture d&#39;écran 2026-08-27 145454" src="https://github.com/user-attachments/assets/344c70f8-781f-4b2e-b1a2-8d55513c1f90" />
+
 
 2. Renseigner les informations de l'utilisateur :
    * **User principal name :** `usr-tech01`
