@@ -10,13 +10,15 @@
 ## Procédure
 
 ### Tâche 1 : Créer et configurer des comptes utilisateurs
-1. Aller dans **Microsoft Entra ID** > **Users** > **New user** > **Create new user**.
+#### Tout d'abord rendons nous sur le portail Azure : https://portal.azure.com/#home 
+
+1. Aller dans **Microsoft Entra ID** grâce au menu déroulant > **Utilisateurs** > **+ Nouvel(le) utilisateur(-trice)**.
 <img width="1284" height="690" alt="Capture d&#39;écran 2026-08-27 145454" src="https://github.com/user-attachments/assets/344c70f8-781f-4b2e-b1a2-8d55513c1f90" />
 
 
 2. Renseigner les informations de base de l'utilisateur, les propriétés et ses attributions :
-   * **User principal name :** `usr-tech01`
-   * **Display name :** `usr-tech01`
+   * ** Nom d’utilisateur principal :** `usr-tech01`
+   * **Nom d’affichage :** `usr-tech01`
 <img width="607" height="531" alt="Capture d&#39;écran 2026-08-27 151408" src="https://github.com/user-attachments/assets/1de2d0e1-2a83-40ec-bc02-163f5eb34445" />
 
 
@@ -26,17 +28,17 @@
 
 "Vérifier + Créer" pour terminer la création du compte utilisateur, et actualiser la page.
 
-4. Répéter l'opération pour `usr-admin01`.
+4. Répéter l'opération pour `usr-admin01` mais en utilisateur invité.
 <img width="922" height="849" alt="Capture d&#39;écran 2026-08-27 153701" src="https://github.com/user-attachments/assets/f6cbe6e4-b8b2-4e1c-a999-a0031c0449a3" />
 
 ### Tâche 2 : Créer des groupes et ajouter des membres
-1. Aller dans **Microsoft Entra ID** > **Groups** > **New group**.
+1. Aller dans **Microsoft Entra ID** > **Groupes** > **Nouveau groupe**.
 <img width="836" height="649" alt="Capture d&#39;écran 2026-08-27 153916" src="https://github.com/user-attachments/assets/a4b1ae02-d972-484e-9a96-f6081f5b2960" />
 
 3. Configurer le groupe :
-   * **Groupe type :** Security
-   * **Nom du groupe :** `Grp-IT-Support`
-   * **Membership type :** Assigned
+   * **Type de groupe :** Securité
+   * **Nom de groupe :** `Grp-IT-Support`
+   * **Type d'appartenance :** Affecté
 <img width="824" height="578" alt="Capture d&#39;écran 2026-08-27 154040" src="https://github.com/user-attachments/assets/08fe1214-5643-498d-ae15-10e2504e91ad" />
      
 5. Dans la section **Membres**, ajouter l'utilisateur `usr-tech01`.
