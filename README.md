@@ -13,5 +13,4 @@ Réseau : réseaux virtuels (VNets), peering, groupes de sécurité réseau (NSG
 
 Calcul et stockage : machines virtuelles, stockage Blob et coffres de sauvegarde/restauration Azure.
 
-Traduit avec DeepL.com (version gratuite)
 
