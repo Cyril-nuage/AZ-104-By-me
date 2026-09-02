@@ -1,4 +1,4 @@
-# ☁️ Azure AZ-104 — Labs & Home Lab
+# Azure AZ-104 — Labs & Home Lab
 
 ## À propos
 
