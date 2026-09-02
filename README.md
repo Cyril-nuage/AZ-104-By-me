@@ -36,7 +36,7 @@ captures d'écran.
 | 09 | Applications Web | App Service / Web Apps |
 | 10 | Protection des données | Azure Backup / Recovery Services Vault / Site Recovery |
 | 11 | Supervision et monitoring | Azure Monitor / Log Analytics / Alerts |
-|---|---|---|
+
 
 ## Environnement
 
