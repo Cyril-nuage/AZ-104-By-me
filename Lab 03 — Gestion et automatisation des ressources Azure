@@ -1,0 +1,200 @@
+Lab 03 — Gestion et automatisation des ressources Azure
+
+AZ-104 — Microsoft Azure Administrator
+
+## Objectif
+
+Mettre en pratique la gestion et l'automatisation des ressources Azure à l'aide du portail Azure, des modèles ARM, d'Azure PowerShell et d'Azure CLI.
+
+L'objectif est de comprendre différentes méthodes permettant de créer, configurer et administrer des ressources Azure de manière manuelle ou automatisée.
+
+## Compétences mises en pratique
+Gestion des groupes de ressources
+Déploiement et organisation des ressources Azure
+Déplacement de ressources entre groupes
+Gestion des verrous de ressources
+Utilisation des modèles ARM
+Azure Cloud Shell
+Azure PowerShell
+Azure CLI
+Automatisation des déploiements
+Vérification des ressources déployées
+## Environnement
+Élément	Configuration
+Cloud	Microsoft Azure
+Interface	Portail Azure
+Automatisation	Modèles ARM / PowerShell / Azure CLI
+Terminal	Azure Cloud Shell
+Environnement	Lab personnel
+## Réalisation
+**1. Gestion des groupes de ressources**
+
+Création et organisation de groupes de ressources afin de regrouper les ressources Azure selon leur utilisation.
+
+Chemin :
+
+*Portail Azure → Groupes de ressources*
+
+Les groupes de ressources permettent de gérer plusieurs ressources comme une même unité logique.
+
+📸 Capture : liste des groupes de ressources créés.
+
+**2. Création et gestion des ressources**
+
+Déploiement de ressources Azure dans les groupes de ressources prévus par le scénario.
+
+Les ressources sont ensuite identifiées et vérifiées depuis leur groupe de ressources.
+
+📸 Capture : groupe de ressources contenant les ressources déployées.
+
+**3. Déplacement de ressources**
+
+Mise en pratique du déplacement d'une ressource d'un groupe de ressources vers un autre.
+
+Chemin :
+
+*Ressource → Modifier → Déplacer vers un autre groupe de ressources*
+
+Cette opération permet de réorganiser une infrastructure sans devoir recréer systématiquement les ressources.
+
+📸 Capture : sélection de la ressource et du groupe de destination.
+
+**4. Gestion des verrous de ressources**
+
+Mise en place d'un verrou afin de protéger une ressource contre une suppression accidentelle.
+
+Chemin :
+
+*Ressource / Groupe de ressources → Paramètres → Verrous*
+
+📸 Capture : verrou configuré.
+
+## Objectif
+
+Les verrous constituent une protection supplémentaire permettant de limiter certaines opérations sur les ressources critiques.
+
+**5. Déploiement avec un modèle ARM**
+
+Utilisation d'un modèle ARM (Azure Resource Manager) afin de décrire les ressources à déployer sous forme de code.
+
+Le modèle permet de définir de manière déclarative la configuration de l'infrastructure.
+
+📸 Capture : modèle ARM chargé dans l'éditeur de déploiement.
+
+## Intérêt
+
+L'utilisation d'un modèle permet de reproduire plus facilement une infrastructure et de réduire les manipulations manuelles.
+
+**6. Déploiement d'une ressource avec ARM**
+
+Déploiement d'une ressource Azure à partir du modèle ARM fourni par Microsoft.
+
+Chemin :
+
+*Portail Azure → Déployer un modèle personnalisé*
+
+Le modèle est chargé puis déployé dans le groupe de ressources prévu.
+
+📸 Capture : paramètres du déploiement avant validation.
+
+📸 Capture : déploiement terminé avec succès.
+
+**7. Vérification du déploiement ARM**
+
+Vérification de la ressource créée à partir du modèle.
+
+Contrôles effectués :
+
+présence de la ressource ;
+configuration correcte ;
+groupe de ressources ;
+état du déploiement.
+
+📸 Capture : ressource créée à partir du modèle ARM.
+
+**8. Utilisation d'Azure PowerShell**
+
+Utilisation d'Azure Cloud Shell afin d'administrer Azure à l'aide de PowerShell.
+
+Chemin :
+
+*Portail Azure → Cloud Shell → PowerShell*
+
+Les commandes PowerShell permettent notamment de créer et configurer des ressources Azure directement depuis le terminal.
+
+📸 Capture : Cloud Shell avec les commandes exécutées.
+
+**9. Création d'une ressource avec PowerShell**
+
+Création d'un groupe de ressources puis d'une ressource Azure à l'aide de commandes PowerShell.
+
+Cette méthode permet d'effectuer des opérations d'administration sans passer systématiquement par l'interface graphique.
+
+📸 Capture : résultat des commandes PowerShell.
+
+**10. Utilisation d'Azure CLI**
+
+Utilisation d'Azure Cloud Shell avec Azure CLI afin d'administrer les ressources Azure en ligne de commande.
+
+Chemin :
+
+*Portail Azure → Cloud Shell → Bash*
+
+Azure CLI permet d'effectuer les opérations d'administration et d'automatisation à partir d'un terminal.
+
+📸 Capture : commandes Azure CLI exécutées.
+
+**11. Création et configuration avec Azure CLI**
+
+Création et configuration des ressources demandées à l'aide d'Azure CLI.
+
+Les résultats sont ensuite vérifiés depuis le portail Azure.
+
+📸 Capture : résultat des commandes.
+
+📸 Capture : ressource visible dans le portail Azure.
+
+  ## Comparaison des méthodes
+Méthode	Utilisation
+Portail Azure	Administration graphique et opérations ponctuelles
+Modèle ARM	Déploiement déclaratif et reproductible
+Azure PowerShell	Administration et automatisation avec PowerShell
+Azure CLI	Administration et automatisation en ligne de commande
+  ## Résultat
+
+Ce lab m'a permis de mettre en pratique plusieurs méthodes de gestion des ressources Azure :
+
+création et organisation de ressources ;
+gestion des groupes de ressources ;
+déplacement de ressources ;
+protection avec des verrous ;
+déploiement avec des modèles ARM ;
+administration avec PowerShell ;
+administration avec Azure CLI.
+  ## Ce que j'ai appris
+
+J'ai compris qu'une infrastructure Azure peut être administrée de plusieurs façons.
+
+Le portail Azure est particulièrement pratique pour visualiser et configurer les ressources.
+
+Les modèles ARM permettent de décrire une infrastructure sous forme de code afin de faciliter sa reproduction.
+
+PowerShell et Azure CLI permettent quant à eux d'automatiser et d'enchaîner des opérations d'administration.
+
+Cette approche constitue une première étape vers l'Infrastructure as Code et l'automatisation des tâches d'administration.
+
+  ## Approche professionnelle
+
+Dans un environnement professionnel, le choix de la méthode d'administration dépend du contexte.
+
+Pour une opération ponctuelle, le portail Azure peut être suffisant.
+
+Pour des déploiements répétitifs ou standardisés, l'utilisation de modèles et de scripts permet de réduire les manipulations manuelles, d'améliorer la reproductibilité et de limiter les erreurs humaines.
+
+L'automatisation permet également de rendre les opérations plus facilement documentables et reproductibles par les différents membres d'une équipe IT.
+
+  ## Source
+
+Lab basé sur les exercices pratiques Microsoft Learning — AZ-104 Microsoft Azure Administrator.
+
+Les manipulations ont été réalisées dans mon propre environnement Azure à des fins d'apprentissage.
