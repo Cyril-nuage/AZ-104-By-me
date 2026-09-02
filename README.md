@@ -29,7 +29,14 @@ captures d'écran.
 | 02 | Réseau virtuel | VNet / Subnet / NSG |
 | 03 | Stockage | Storage Account |
 | 04 | Identités | Entra ID / RBAC |
-| ... | ... | ... |
+| 05 | Connectivité inter-sites | VNet Peering / VPN Gateway / Network Watcher |
+| 06 | Gestion du trafic réseau | Load Balancer / Traffic Manager / Application Gateway |
+| 07 | Stockage Azure | Storage Account / Blob Storage / File Shares |
+| 08 | Machines virtuelles | Azure VM / Managed Disks / VM Scale Sets |
+| 09 | Applications Web | App Service / Web Apps |
+| 10 | Protection des données | Azure Backup / Recovery Services Vault / Site Recovery |
+| 11 | Supervision et monitoring | Azure Monitor / Log Analytics / Alerts |
+|---|---|---|
 
 ## Environnement
 
