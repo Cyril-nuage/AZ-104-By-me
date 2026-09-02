@@ -1,16 +1,41 @@
-# AZ-104-By-me
-Exercices pratiques sur Azure et scripts « infrastructure as code » développés dans le cadre de la préparation à la certification Microsoft AZ-104
+# ☁️ Azure AZ-104 — Labs & Home Lab
 
-Bienvenue dans mon référentiel personnel dédié aux laboratoires Azure. Ce projet rend compte de mon expérience pratique et des configurations personnalisées que j’ai mises en place lors de ma préparation à l’examen « Microsoft Certified : Azure Administrator Associate AZ-104 ».
+## À propos
 
-Objectifs : Concevoir et déployer une infrastructure cloud sécurisée à l’aide du portail Azure, de l’interface de ligne de commande (CLI) et de PowerShell.
+Portfolio personnel réalisé dans le cadre de ma préparation à la
+certification Microsoft Azure Administrator (AZ-104).
 
-Acquérir une expérience concrète en matière de gestion des identités, de mise en réseau, de stockage et de solutions de calcul.
+L'objectif de ce dépôt est de mettre en pratique les concepts étudiés
+dans la formation AZ-104 à travers différents labs réalisés dans mon
+propre environnement Azure.
 
-Contenu Identité et gouvernance : utilisateurs Entra ID, rôles RBAC et stratégies personnalisées.
+Les labs sont basés sur les exercices proposés par Microsoft et sont
+reproduits, documentés et illustrés avec mes propres manipulations et
+captures d'écran.
 
-Réseau : réseaux virtuels (VNets), peering, groupes de sécurité réseau (NSG) et DNS.
+## Objectifs
 
-Calcul et stockage : machines virtuelles, stockage Blob et coffres de sauvegarde/restauration Azure.
+- Développer mes compétences d'administration Azure
+- Comprendre les services fondamentaux d'Azure
+- Mettre en pratique les concepts étudiés pour l'AZ-104
+- Développer mes compétences en administration systèmes et réseaux
+- Documenter mes manipulations techniques
 
+## Labs
+
+| Lab | Sujet | Services |
+|---|---|---|
+| 01 | Machines virtuelles | Azure VM |
+| 02 | Réseau virtuel | VNet / Subnet / NSG |
+| 03 | Stockage | Storage Account |
+| 04 | Identités | Entra ID / RBAC |
+| ... | ... | ... |
+
+## Environnement
+
+- Microsoft Azure
+- Microsoft Entra ID
+- Azure Portal
+- PowerShell
+- Windows
 
