@@ -1,48 +1,116 @@
-# AZ-104 | Lab 01 : Gérer les identités Microsoft Entra ID
+Lab 01 — Gestion des identités Microsoft Entra ID
 
-## Architecture / Composants
-* **Tenant :** Microsoft Entra ID
-* **Utilisateurs :** `usr-tech01` (Support), `usr-admin01` (Admin)
-* **Groupes :** `Grp-IT-Support` (Security)
+AZ-104 — Microsoft Azure Administrator
 
----
+ ## Objectif
 
-## Procédure
+Mettre en pratique la gestion des identités et des groupes dans Microsoft Entra ID à travers la création d'utilisateurs, l'invitation d'un utilisateur externe et la création d'un groupe de sécurité.
 
-### Tâche 1 : Créer et configurer des comptes utilisateurs
-#### Tout d'abord rendons nous sur le portail Azure : https://portal.azure.com/#home 
+## Compétences mises en pratique
+Gestion des utilisateurs Microsoft Entra ID
+Gestion des utilisateurs externes (Guest)
+Création et gestion de groupes
+Gestion des membres et propriétaires
+Appartenance de groupe Assigned
+Organisation des identités
+## Environnement
+Élément	Configuration
+Cloud	Microsoft Azure
+Service	Microsoft Entra ID
+Interface	Azure Portal
+Environnement	Lab personnel
+## Réalisation
+**1. Création d'un utilisateur**
 
-1. Aller dans **Microsoft Entra ID** grâce au menu déroulant > **Utilisateurs** > **+ Nouvel(le) utilisateur(-trice)**.
-<img width="1284" height="690" alt="Capture d&#39;écran 2026-08-27 145454" src="https://github.com/user-attachments/assets/344c70f8-781f-4b2e-b1a2-8d55513c1f90" />
+Création de l'utilisateur usr-tech01 dans Microsoft Entra ID avec les informations demandées par le scénario.
+
+Chemin :
+
+*Portail Azure → Microsoft Entra ID → Utilisateurs → Nouvel(le) utilisateur(-trice)*
+
+Configuration principale :
+
+Nom : usr-tech01
+Job title : IT Lab Administrator
+Department : IT
+Compte : Activé
+
+<img width="1213" height="1062" alt="Capture d&#39;écran 2026-08-27 151408" src="https://github.com/user-attachments/assets/11384696-5d82-4bdf-bade-f2b5c4a3e2aa" />
 
 
-2. Renseigner les informations de base de l'utilisateur, les propriétés et ses attributions :
-   * **Nom d’utilisateur principal :** `usr-tech01`
-   * **Nom d’affichage :** `usr-tech01`
-<img width="607" height="531" alt="Capture d&#39;écran 2026-08-27 151408" src="https://github.com/user-attachments/assets/1de2d0e1-2a83-40ec-bc02-163f5eb34445" />
+**2. Vérification de l'utilisateur**
+
+Vérification de la présence du compte dans la liste des utilisateurs Microsoft Entra ID.
+
+Chemin :
+
+*Microsoft Entra ID → Utilisateurs → Tous les utilisateurs*
+
+<img width="2070" height="703" alt="Capture d&#39;écran 2026-08-27 152217" src="https://github.com/user-attachments/assets/6a728e8e-04cb-41e3-a817-ea3ec3a1671b" />
 
 
+**3. Invitation d'un utilisateur externe**
 
-3. Définir un mot de passe temporaire et valider la création.
-<img width="1035" height="352" alt="Capture d&#39;écran 2026-08-27 152217" src="https://github.com/user-attachments/assets/d34d1a09-b999-4d35-8af7-ea641295acaa" />
+Invitation d'un utilisateur externe afin de mettre en pratique la gestion des identités Guest.
 
-"Vérifier + Créer" pour terminer la création du compte utilisateur, et actualiser la page.
+Chemin :
 
-4. Répéter l'opération pour `usr-admin01` mais en utilisateur invité.
-<img width="922" height="849" alt="Capture d&#39;écran 2026-08-27 153701" src="https://github.com/user-attachments/assets/f6cbe6e4-b8b2-4e1c-a999-a0031c0449a3" />
+*Microsoft Entra ID → Utilisateurs → Nouvel(le) utilisateur(-trice) → Inviter un utilisateur externe*
 
-### Tâche 2 : Créer des groupes et ajouter des membres
-1. Aller dans **Microsoft Entra ID** > **Groupes** > **Nouveau groupe**.
-<img width="836" height="649" alt="Capture d&#39;écran 2026-08-27 153916" src="https://github.com/user-attachments/assets/a4b1ae02-d972-484e-9a96-f6081f5b2960" />
+<img width="922" height="849" alt="Capture d&#39;écran 2026-08-27 153701" src="https://github.com/user-attachments/assets/d7d31948-b5f6-45ef-a906-2ab4602de8e5" />
 
-3. Configurer le groupe :
-   * **Type de groupe :** Securité
-   * **Nom de groupe :** `Grp-IT-Support`
-   * **Type d'appartenance :** Affecté
-<img width="824" height="578" alt="Capture d&#39;écran 2026-08-27 154040" src="https://github.com/user-attachments/assets/08fe1214-5643-498d-ae15-10e2504e91ad" />
-     
-5. Dans la section **Membres**, ajouter l'utilisateur `usr-tech01`.
-<img width="824" height="578" alt="Capture d&#39;écran 2026-08-27 154040" src="https://github.com/user-attachments/assets/0db868c7-1f26-4ba9-8823-4e494e620536" />
-   
-7. Cliquer sur **Créer**.
-<img width="975" height="666" alt="Capture d&#39;écran 2026-08-27 154139" src="https://github.com/user-attachments/assets/57f28ea9-e9c5-4cec-97f1-cf326646bf91" />
+**4. Création du groupe de sécurité**
+
+Création du groupe IT Lab Administrators afin de regrouper les utilisateurs concernés par l'administration de l'environnement.
+
+Chemin :
+
+*Microsoft Entra ID → Groupes → Nouveau Groupe*
+
+Paramètre	Valeur
+Type	Security
+Nom	IT Lab Administrators
+Membership type	Assigned
+
+<img width="888" height="704" alt="Capture d&#39;écran 2026-08-27 154014" src="https://github.com/user-attachments/assets/f12aa001-8ac6-4cd1-a3ca-84aace54bcea" />
+
+
+**5. Gestion des propriétaires et des membres**
+
+Définition d'un propriétaire puis ajout des utilisateurs au groupe.
+
+Chemin :
+
+*Microsoft Entra ID → Groupes → IT Lab Administrators → Propriétaires / Membres*
+
+<img width="824" height="578" alt="Capture d&#39;écran 2026-08-27 154040" src="https://github.com/user-attachments/assets/a0a9288a-97df-4415-b5f3-1f7f72709c64" />
+
+
+## Résultat
+
+Le groupe IT Lab Administrators a été créé avec succès et les utilisateurs prévus par le scénario ont été associés au groupe.
+
+<img width="975" height="666" alt="Capture d&#39;écran 2026-08-27 154139" src="https://github.com/user-attachments/assets/b1ee3b5d-837c-4f66-9573-670d32e50c8f" />
+
+
+L'environnement dispose désormais d'une première organisation des identités permettant de préparer la gestion des autorisations Azure.
+
+## Ce que j'ai appris
+
+Ce lab m'a permis de comprendre les bases de la gestion des identités dans Microsoft Entra ID et notamment l'intérêt des groupes pour organiser les utilisateurs.
+
+J'ai également découvert la gestion des utilisateurs externes ainsi que la différence entre une appartenance de groupe Assigned et Dynamic.
+
+## Approche professionnelle
+
+Dans un environnement d'entreprise, l'organisation des identités permet de simplifier l'administration et de préparer une gestion structurée des accès.
+
+L'utilisation de groupes permet notamment d'éviter de gérer individuellement chaque utilisateur lorsqu'ils doivent bénéficier de permissions similaires.
+
+Le prochain lab permettra d'aller plus loin avec Azure RBAC, afin de déterminer précisément quelles actions les utilisateurs ou groupes sont autorisés à effectuer.
+
+## Source
+
+Lab basé sur le parcours pratique Microsoft Learning — AZ-104 Microsoft Azure Administrator.
+
+Les manipulations ont été réalisées dans mon propre environnement Azure à des fins d'apprentissage.
