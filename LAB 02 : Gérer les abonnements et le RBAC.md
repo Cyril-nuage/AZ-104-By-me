@@ -37,7 +37,8 @@ Chemin :
 
 Les groupes d’administration permettent de regrouper plusieurs abonnements et d'appliquer certaines règles de gouvernance à un niveau supérieur.
 
-📸 Capture : hiérarchie des groupes d’administration.
+<img width="669" height="477" alt="Capture d&#39;écran 2026-08-31 133823" src="https://github.com/user-attachments/assets/2dd0d882-d570-4adf-9faf-5cf8e378b51e" />
+
 
 **2. Création d'un rôle RBAC personnalisé**
 
@@ -49,7 +50,7 @@ les actions autorisées ;
 les actions exclues ;
 l'étendue d'application du rôle.
 
-📸 Capture : définition du rôle personnalisé.
+<img width="712" height="970" alt="Capture d&#39;écran 2026-08-31 141541" src="https://github.com/user-attachments/assets/90e040aa-4df9-46a6-8aa0-1e36595ea911" />
 
 ## Objectif
 
@@ -62,8 +63,6 @@ Attribution du rôle à un utilisateur ou à un groupe sur l'étendue définie.
 Chemin :
 
 *Groupe de ressources → Contrôle d’accès (IAM) → Ajouter → Ajouter une attribution de rôle*
-
-📸 Capture : attribution du rôle.
 
 ## À retenir
 
@@ -84,7 +83,7 @@ Chemin :
 
 *Groupe de ressources → Étiquettes*
 
-📸 Capture : groupe de ressources avec l'étiquette configurée.
+<img width="434" height="689" alt="image" src="https://github.com/user-attachments/assets/dc55d031-c99d-47d4-bbea-6ff6800af667" />
 
 ## Objectif
 
@@ -113,7 +112,7 @@ Paramètres :
 Valeur : 000
 Application : Activée
 
-📸 Capture : configuration de la stratégie.
+<img width="837" height="941" alt="image" src="https://github.com/user-attachments/assets/765ed4b1-903c-41bc-9b6f-3bbc4927e1bd" />
 
 **6. Test de conformité de la stratégie**
 
