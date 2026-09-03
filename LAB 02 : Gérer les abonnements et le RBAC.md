@@ -120,7 +120,7 @@ Tentative de création d'une ressource sans renseigner l'étiquette obligatoire.
 
 La création est alors refusée par Azure Policy.
 
-📸 Capture : message indiquant que le déploiement est bloqué par la stratégie.
+<img width="1087" height="339" alt="image" src="https://github.com/user-attachments/assets/32b180b8-56d8-4bbc-a3b1-19304d782493" />
 
 ## Résultat
 
@@ -136,7 +136,7 @@ Chemin :
 
 Une tâche de remédiation permet ensuite de mettre en conformité les ressources concernées.
 
-📸 Capture : stratégie et/ou tâche de remédiation.
+<img width="1092" height="942" alt="image" src="https://github.com/user-attachments/assets/8422a659-e2a8-4e99-977b-916ed72f9219" />
 
 **8. Protection avec un verrou de ressource**
 
