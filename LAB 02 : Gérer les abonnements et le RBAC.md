@@ -150,7 +150,7 @@ Paramètre	Valeur
 Nom du verrou	rg-lock
 Type	Suppression
 
-📸 Capture : verrou de ressource configuré.
+<img width="1183" height="391" alt="image" src="https://github.com/user-attachments/assets/7890c49f-319f-4f44-b43d-e0637ebd34b1" />
 
 ## Objectif
 
@@ -162,7 +162,7 @@ Tentative de suppression du groupe de ressources afin de vérifier le fonctionne
 
 La suppression est refusée tant que le verrou est présent.
 
-📸 Capture : message indiquant que la suppression est bloquée.
+<img width="2493" height="490" alt="image" src="https://github.com/user-attachments/assets/11744482-647b-4b4e-8138-e5ac96d2acc7" />
 
 ## Résultat
 
