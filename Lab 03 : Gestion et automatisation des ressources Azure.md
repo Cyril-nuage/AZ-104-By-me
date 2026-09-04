@@ -43,7 +43,7 @@ Une fois le disque créé, export du modèle ARM depuis la ressource.
 
 Chemin :
 
-Disks → az104-disk1 → Automation → Export template
+Disks → az104-disk1 → Exporter un modèle
 
 Le modèle et le fichier de paramètres sont ensuite téléchargés afin de pouvoir les réutiliser.
 
@@ -57,14 +57,14 @@ Utilisation du modèle téléchargé pour créer un deuxième disque sans refair
 
 Chemin :
 
-Portail Azure → Deploy a custom template → Build your own template in the editor
+Portail Azure → Déployer un modèle personnalisé → Créer votre propre modèle dans l'éditeur 
 
 Modification du modèle :
 
 remplacement du nom du disque par az104-disk2 ;
 adaptation du fichier parameters.json.
 
-Le modèle est ensuite déployé dans az104-rg3.
+Le modèle est ensuite déployé dans TESTLAB3.
 
 <img width="1050" height="883" alt="image" src="https://github.com/user-attachments/assets/0df87923-1229-43c1-8d6c-875fd7ea6aa7" /> | <img width="1372" height="813" alt="image" src="https://github.com/user-attachments/assets/a6ccff64-b4c7-404e-bb1a-9bc8b8aabe7d" />
 
@@ -77,7 +77,7 @@ Utilisation d'Azure Cloud Shell avec PowerShell pour déployer le modèle.
 
 Chemin :
 
-Portail Azure → PowerShell ( icone de Terminal en haut à droite ) 
+Portail Azure → Cloud PowerShell ( icone de Terminal en haut à droite ) 
 
 Le nom du disque est modifié en az104-disk3 : 
 
@@ -102,7 +102,7 @@ Utilisation d'Azure Cloud Shell avec Bash / Azure CLI.
 
 Chemin :
 
-Cloud Shell → Switch to Bash
+Cloud Shell → Basculer vers Bash
 
 Le nom du disque est modifié en :
 
@@ -110,7 +110,7 @@ az104-disk4
 
 Le modèle est ensuite déployé avec :
 
-az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
+az deployment group create --resource-group TESTLAB3 --template-file template.json --parameters parameters.json
 
 Une commande permet ensuite de vérifier les disques présents dans le groupe de ressources.
 
@@ -124,7 +124,7 @@ Utilisation d'un fichier Bicep pour créer un dernier disque.
 
 Chemin :
 
-Cloud Shell → Manage files → Upload
+Cloud Shell → Gérer les fichiers  → Charger
 
 Le fichier azuredeploydisk.bicep est chargé dans Cloud Shell puis modifié.
 
@@ -134,13 +134,11 @@ Nom : az104-disk5
 Taille : 32 GiB
 Type : StandardSSD_LRS
 
-Le fichier Bicep est ensuite déployé avec Azure CLI.
+Le fichier Bicep est ensuite déployé avec Azure PowerShell.
 
-az deployment group create --resource-group az104-rg3 --template-file azuredeploydisk.bicep
+New-AzResourceGroupDeployment -ResourceGroupName "TESTLAB3" -TemplateFile ".\azuredeploydisk.bicep"
 
-📸 Capture : fichier Bicep modifié.
-
-📸 Capture : déploiement terminé et az104-disk5 créé.
+<img width="915" height="1027" alt="image" src="https://github.com/user-attachments/assets/93985655-13e8-4617-97d5-d9e4a2a3c6d1" />
 
 Comparaison des méthodes
 Méthode	Utilisation
