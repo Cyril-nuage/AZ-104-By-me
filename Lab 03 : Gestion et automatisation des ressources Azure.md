@@ -2,13 +2,13 @@ Lab 03 — Gestion des ressources Azure avec des modèles ARM
 
 AZ-104 — Microsoft Azure Administrator
 
-Objectif
+##Objectif
 
 Apprendre à automatiser le déploiement de ressources Azure avec des modèles ARM et Bicep.
 
 L'objectif est de comprendre comment créer une ressource, récupérer son modèle, puis réutiliser ce modèle avec différentes méthodes de déploiement.
 
-Compétences mises en pratique
+##Compétences mises en pratique
 Création d'un modèle ARM
 Modification d'un modèle ARM
 Déploiement de ressources avec un modèle
@@ -17,7 +17,7 @@ Azure PowerShell
 Azure CLI
 Utilisation de Bicep
 Vérification des déploiements
-Environnement
+##Environnement
 Élément	Configuration
 Cloud	Microsoft Azure
 Interface	Portail Azure
@@ -28,7 +28,7 @@ Groupe de ressources	az104-rg3
 Environnement	Lab personnel
 Réalisation
 
-1. Création d'un modèle ARM
+**1. Création d'un modèle ARM**
 
 Création d'un disque managé dans le groupe de ressources TESTLAB3.
 
@@ -43,7 +43,7 @@ Une fois le disque créé, export du modèle ARM depuis la ressource.
 
 Chemin :
 
-Disks → az104-disk1 → Exporter un modèle
+*Disks → az104-disk1 → Exporter un modèle*
 
 Le modèle et le fichier de paramètres sont ensuite téléchargés afin de pouvoir les réutiliser.
 
@@ -51,13 +51,13 @@ Le modèle et le fichier de paramètres sont ensuite téléchargés afin de pouv
 
 <img width="824" height="668" alt="image" src="https://github.com/user-attachments/assets/1391c3ec-1322-4136-917e-dd366b832f02" />
 
-2. Modification et redéploiement du modèle ARM
+**2. Modification et redéploiement du modèle ARM**
 
 Utilisation du modèle téléchargé pour créer un deuxième disque sans refaire toute la configuration manuellement.
 
 Chemin :
 
-Portail Azure → Déployer un modèle personnalisé → Créer votre propre modèle dans l'éditeur 
+*Portail Azure → Déployer un modèle personnalisé → Créer votre propre modèle dans l'éditeur*
 
 Modification du modèle :
 
@@ -72,13 +72,13 @@ Le modèle est ensuite déployé dans TESTLAB3.
 
 <img width="1122" height="450" alt="image" src="https://github.com/user-attachments/assets/80becfa2-e5a5-4198-bc70-7ce01f3ad13b" />
 
-3. Déploiement avec Azure PowerShell
+**3. Déploiement avec Azure PowerShell**
 
 Utilisation d'Azure Cloud Shell avec PowerShell pour déployer le modèle.
 
 Chemin :
 
-Portail Azure → Cloud PowerShell ( icone de Terminal en haut à droite ) 
+*Portail Azure → Cloud PowerShell ( icone de Terminal en haut à droite )*
 
 Le nom du disque est modifié en az104-disk3 : 
 
@@ -97,13 +97,13 @@ Mais vous pouvez toujours vérifier directement en allant dans le groupe de ress
 
 <img width="836" height="589" alt="image" src="https://github.com/user-attachments/assets/fb61dade-d9fc-435a-b82d-b6c0d244f8c4" />
 
-4. Déploiement avec Azure CLI
+**4. Déploiement avec Azure CLI**
 
 Utilisation d'Azure Cloud Shell avec Bash / Azure CLI.
 
 Chemin :
 
-Cloud Shell → Basculer vers Bash
+*Cloud Shell → Basculer vers Bash*
 
 Le nom du disque est modifié en :
 
@@ -119,13 +119,13 @@ Une commande permet ensuite de vérifier les disques présents dans le groupe de
 
 <img width="470" height="94" alt="image" src="https://github.com/user-attachments/assets/66a5eed5-1d69-42f4-8fb8-c7a29be14886" />
 
-5. Déploiement avec Azure Bicep
+**5. Déploiement avec Azure Bicep**
 
 Utilisation d'un fichier Bicep pour créer un dernier disque.
 
 Chemin :
 
-Cloud Shell → Gérer les fichiers  → Charger
+*Cloud Shell → Gérer les fichiers  → Charger*
 
 Le fichier azuredeploydisk.bicep est chargé dans Cloud Shell puis modifié.
 
@@ -141,7 +141,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "TESTLAB3" -TemplateFile ".\azu
 
 <img width="915" height="1027" alt="image" src="https://github.com/user-attachments/assets/93985655-13e8-4617-97d5-d9e4a2a3c6d1" />
 
-Comparaison des méthodes
+##Comparaison des méthodes
 Méthode	Utilisation
 Portail Azure	Création et export d'un modèle
 ARM Template	Déploiement reproductible avec un fichier JSON
@@ -169,7 +169,7 @@ J'ai également utilisé PowerShell, Azure CLI et Bicep pour automatiser les dé
 
 Bicep permet notamment d'écrire une infrastructure Azure de manière plus simple que le format JSON des modèles ARM.
 
-Approche professionnelle
+##Approche professionnelle
 
 Dans un environnement professionnel, l'automatisation permet de réduire les manipulations manuelles et les risques d'erreur.
 
@@ -179,7 +179,7 @@ PowerShell et Azure CLI permettent quant à eux d'automatiser les opérations d'
 
 Cette approche constitue une base pour l'Infrastructure as Code (IaC).
 
-Source
+##Source
 
 Lab basé sur les exercices pratiques Microsoft Learning — AZ-104 Microsoft Azure Administrator.
 
