@@ -2,7 +2,7 @@ Lab 03 — Gestion des ressources Azure avec des modèles ARM
 
 AZ-104 — Microsoft Azure Administrator
 
-##Objectif
+## Objectif
 
 Apprendre à automatiser le déploiement de ressources Azure avec des modèles ARM et Bicep.
 
