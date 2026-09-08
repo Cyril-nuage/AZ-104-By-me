@@ -37,7 +37,7 @@ Chemin :
 
 Le réseau virtuel permet de connecter et d'organiser les différentes ressources Azure.
 
-📸 Capture : configuration du réseau virtuel.
+<img width="2427" height="2032" alt="image" src="https://github.com/user-attachments/assets/f213c9a7-9925-4a35-91fe-c7043bcc974e" />
 
 **2. Création des sous-réseaux**
 
@@ -45,7 +45,7 @@ Création des sous-réseaux nécessaires dans le réseau virtuel.
 
 Les sous-réseaux permettent de séparer les différentes parties du réseau et d'organiser les ressources.
 
-📸 Capture : liste des sous-réseaux.
+<img width="1600" height="1963" alt="image" src="https://github.com/user-attachments/assets/d604abdd-16c8-4266-b062-dd9fd7ce9d2e" />
 
 **3. Déploiement d'un réseau avec un modèle ARM**
 
@@ -53,7 +53,9 @@ Utilisation d'un modèle ARM afin de déployer un deuxième réseau virtuel.
 
 Le modèle permet de définir la configuration du réseau sous forme de code et de reproduire plus facilement le déploiement.
 
-📸 Capture : modèle ARM et paramètres du déploiement.
+<img width="2263" height="1869" alt="image" src="https://github.com/user-attachments/assets/a1566601-9b2a-4e6d-9f3b-8db731a5ada9" />
+<img width="1414" height="1849" alt="image" src="https://github.com/user-attachments/assets/d89da897-4a2f-4381-bc24-7030a7904e0f" />
+
 
 📸 Capture : déploiement terminé.
 
