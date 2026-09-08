@@ -2,8 +2,7 @@
 
 ## À propos
 
-Portfolio personnel réalisé dans le cadre de ma préparation à la
-certification Microsoft Azure Administrator (AZ-104).
+Portfolio personnel réalisé dans le cadre de mon auto-formation lors de mon temps privé.
 
 L'objectif de ce dépôt est de mettre en pratique les concepts étudiés
 dans la formation AZ-104 à travers différents labs réalisés dans mon
