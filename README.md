@@ -24,18 +24,17 @@ captures d'écran.
 
 | Lab | Sujet | Services |
 |---|---|---|
-| 01 | Machines virtuelles | Azure VM |
-| 02 | Réseau virtuel | VNet / Subnet / NSG |
-| 03 | Stockage | Storage Account |
-| 04 | Identités | Entra ID / RBAC |
-| 05 | Connectivité inter-sites | VNet Peering / VPN Gateway / Network Watcher |
-| 06 | Gestion du trafic réseau | Load Balancer / Traffic Manager / Application Gateway |
-| 07 | Stockage Azure | Storage Account / Blob Storage / File Shares |
-| 08 | Machines virtuelles | Azure VM / Managed Disks / VM Scale Sets |
-| 09 | Applications Web | App Service / Web Apps |
-| 10 | Protection des données | Azure Backup / Recovery Services Vault / Site Recovery |
-| 11 | Supervision et monitoring | Azure Monitor / Log Analytics / Alerts |
-
+| **01** | Identités et contrôle d’accès | Entra ID / RBAC |
+| **02** | Stockage Azure | Storage Account / Blob Storage / File Shares |
+| **03** | Machines virtuelles | Azure VM / Managed Disks / VM Scale Sets |
+| **04** | Réseau virtuel | VNet / Subnet / NSG |
+| **05** | Connectivité inter-sites | VNet Peering / VPN Gateway / Network Watcher |
+| **06** | Gestion du trafic réseau | Load Balancer / Traffic Manager / Application Gateway |
+| **07** | Applications Web | App Service / Web Apps |
+| **08** | Protection des données | Azure Backup / Recovery Services Vault / Site Recovery |
+| **09** | Supervision et monitoring | Azure Monitor / Log Analytics / Alerts |
+| **10** | Lab de synthèse — Administration Azure | RBAC / Storage / VM / Réseau / Monitoring |
+| **11** | Lab final — Scénario complet | Architecture Azure complète |
 
 ## Environnement
 
