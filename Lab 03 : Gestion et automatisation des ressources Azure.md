@@ -8,7 +8,7 @@ Apprendre à automatiser le déploiement de ressources Azure avec des modèles A
 
 L'objectif est de comprendre comment créer une ressource, récupérer son modèle, puis réutiliser ce modèle avec différentes méthodes de déploiement.
 
-##Compétences mises en pratique
+## Compétences mises en pratique
 Création d'un modèle ARM
 Modification d'un modèle ARM
 Déploiement de ressources avec un modèle
@@ -17,7 +17,7 @@ Azure PowerShell
 Azure CLI
 Utilisation de Bicep
 Vérification des déploiements
-##Environnement
+## Environnement
 Élément	Configuration
 Cloud	Microsoft Azure
 Interface	Portail Azure
@@ -26,7 +26,7 @@ Terminal	Azure Cloud Shell
 Région	East US
 Groupe de ressources	az104-rg3
 Environnement	Lab personnel
-Réalisation
+# Réalisation
 
 **1. Création d'un modèle ARM**
 
@@ -141,7 +141,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "TESTLAB3" -TemplateFile ".\azu
 
 <img width="915" height="1027" alt="image" src="https://github.com/user-attachments/assets/93985655-13e8-4617-97d5-d9e4a2a3c6d1" />
 
-##Comparaison des méthodes
+## Comparaison des méthodes
 Méthode	Utilisation
 Portail Azure	Création et export d'un modèle
 ARM Template	Déploiement reproductible avec un fichier JSON
@@ -169,7 +169,7 @@ J'ai également utilisé PowerShell, Azure CLI et Bicep pour automatiser les dé
 
 Bicep permet notamment d'écrire une infrastructure Azure de manière plus simple que le format JSON des modèles ARM.
 
-##Approche professionnelle
+## Approche professionnelle
 
 Dans un environnement professionnel, l'automatisation permet de réduire les manipulations manuelles et les risques d'erreur.
 
@@ -179,7 +179,7 @@ PowerShell et Azure CLI permettent quant à eux d'automatiser les opérations d'
 
 Cette approche constitue une base pour l'Infrastructure as Code (IaC).
 
-##Source
+## Source
 
 Lab basé sur les exercices pratiques Microsoft Learning — AZ-104 Microsoft Azure Administrator.
 
