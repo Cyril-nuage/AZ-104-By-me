@@ -66,7 +66,8 @@ adaptation du fichier parameters.json.
 
 Le modèle est ensuite déployé dans TESTLAB3.
 
-<img width="1050" height="883" alt="image" src="https://github.com/user-attachments/assets/0df87923-1229-43c1-8d6c-875fd7ea6aa7" /> | <img width="1372" height="813" alt="image" src="https://github.com/user-attachments/assets/a6ccff64-b4c7-404e-bb1a-9bc8b8aabe7d" />
+<img width="1050" height="883" alt="image" src="https://github.com/user-attachments/assets/0df87923-1229-43c1-8d6c-875fd7ea6aa7" /> 
+<img width="1372" height="813" alt="image" src="https://github.com/user-attachments/assets/a6ccff64-b4c7-404e-bb1a-9bc8b8aabe7d" />
 
 
 <img width="1122" height="450" alt="image" src="https://github.com/user-attachments/assets/80becfa2-e5a5-4198-bc70-7ce01f3ad13b" />
