@@ -109,14 +109,6 @@ zones DNS.
 📸 Capture : vue finale des ressources réseau.
 
 # Comparaison des éléments
-Élément	Utilisation
-Virtual Network	Créer le réseau Azure
-Subnet	Séparer le réseau
-NSG	Contrôler le trafic réseau
-ASG	Regrouper les ressources par rôle
-DNS public	Résoudre des noms accessibles publiquement
-DNS privé	Résoudre des noms dans le réseau privé
-Résultat
 
 Ce lab m'a permis de mettre en pratique plusieurs éléments de la gestion réseau Azure :
 
