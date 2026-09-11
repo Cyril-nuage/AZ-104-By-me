@@ -10,16 +10,16 @@ L'objectif est de créer plusieurs réseaux virtuels, de mettre en place une con
 
 ## Compétences mises en pratique
 
-Création de machines virtuelles Azure
-Création et configuration de réseaux virtuels
-Création de sous-réseaux
-Configuration du VNet Peering
-Test de la connectivité réseau
-Utilisation de Network Watcher
-Création d'une table de routage
-Configuration d'une User Defined Route (UDR)
-Analyse du routage Azure
-Vérification de la connectivité entre réseaux
+- Création de machines virtuelles Azure
+- Création et configuration de réseaux virtuels
+- Création de sous-réseaux
+- Configuration du VNet Peering
+- Test de la connectivité réseau
+- Utilisation de Network Watcher
+- Création d'une table de routage
+- Configuration d'une User Defined Route (UDR)
+- Analyse du routage Azure
+- Vérification de la connectivité entre réseaux
 
 ## Realisation
 
@@ -41,9 +41,9 @@ Plage d'adresses : 10.0.0.0/16
 Sous-réseau : Core
 Plage du sous-réseau : 10.0.0.0/24
 
-📸 Capture : configuration de CoreServicesVM.
+<img width="2026" height="1969" alt="image" src="https://github.com/user-attachments/assets/cc752a2d-6051-44d5-b3eb-68360943067e" />
 
-📸 Capture : configuration du réseau virtuel CoreServicesVnet.
+<img width="1001" height="1015" alt="image" src="https://github.com/user-attachments/assets/a47d880b-f0ff-4851-ba52-1525f6b5bf5d" />
 
 2. Création de la machine virtuelle ManufacturingVM
 
@@ -53,21 +53,11 @@ Cette séparation permet ensuite de mettre en place une communication entre deux
 
 Le réseau virtuel utilisé est ManufacturingVnet.
 
-📸 Capture : configuration de ManufacturingVM.
+<img width="939" height="983" alt="image" src="https://github.com/user-attachments/assets/691098f3-5f79-4788-bea2-2c838e1f65a9" />
 
-📸 Capture : réseau virtuel ManufacturingVnet et son sous-réseau.
+<img width="1924" height="1969" alt="image" src="https://github.com/user-attachments/assets/6e3145a2-ff2b-4e6c-8ed2-e5d1bbff7e71" />
 
-3. Vérification de la connectivité initiale
-
-Vérification de la communication entre les deux machines virtuelles avant la mise en place du peering.
-
-Cette étape permet de constater que les deux réseaux virtuels sont initialement isolés.
-
-Un test réseau est effectué avec PowerShell à l'aide de la commande Test-NetConnection.
-
-📸 Capture : résultat du test de connectivité avant le peering.
-
-4. Configuration du VNet Peering
+3. Configuration du VNet Peering
 
 Mise en place d'un VNet Peering entre CoreServicesVnet et ManufacturingVnet.
 
@@ -79,19 +69,17 @@ Portail Azure → Réseaux virtuels → CoreServicesVnet → Peerings → Ajoute
 
 Configuration du peering entre les deux réseaux.
 
-📸 Capture : configuration du peering CoreServicesVnet → ManufacturingVnet.
+<img width="944" height="985" alt="image" src="https://github.com/user-attachments/assets/b43fc69b-99b0-4544-9885-46e79de607e0" />
 
-📸 Capture : configuration du peering ManufacturingVnet → CoreServicesVnet.
-
-5. Vérification de la connectivité après le peering
+4. Vérification de la connectivité après le peering
 
 Une nouvelle vérification est effectuée afin de confirmer que les machines virtuelles peuvent maintenant communiquer à travers les réseaux virtuels interconnectés.
 
 Le test Test-NetConnection permet de vérifier la communication entre les adresses IP privées des machines virtuelles.
 
-📸 Capture : résultat du test de connectivité après la mise en place du peering.
+<img width="1096" height="952" alt="image" src="https://github.com/user-attachments/assets/8c3f3908-8cb7-4156-a9ca-4c776b560818" />
 
-6. Utilisation de Network Watcher
+5. Utilisation de Network Watcher
 
 Utilisation de Network Watcher afin d'analyser et de diagnostiquer la connectivité réseau Azure.
 
@@ -99,11 +87,11 @@ Network Watcher permet notamment de vérifier le chemin réseau utilisé par le 
 
 Chemin :
 
-Portail Azure → Network Watcher → Analyse du chemin
+Portail Azure → Network Watcher → Résolution des problèmes de connexion
 
-📸 Capture : analyse du chemin réseau avec Network Watcher.
+<img width="875" height="923" alt="image" src="https://github.com/user-attachments/assets/d3c36a2d-200f-48c2-9d05-d88002710a39" />
 
-7. Création d'une table de routage
+6. Création d'une table de routage
 
 Création d'une Route Table afin de définir un routage personnalisé pour le trafic réseau.
 
@@ -113,17 +101,17 @@ Chemin :
 
 Portail Azure → Tables de routage → Créer
 
-📸 Capture : création de la table de routage.
+<img width="915" height="983" alt="image" src="https://github.com/user-attachments/assets/90ac2ed0-42d1-4850-8913-14fda7b0d99f" />
 
-8. Création d'une User Defined Route
+7. Création d'une User Defined Route
 
 Création d'une route personnalisée (User Defined Route / UDR) permettant de définir le prochain saut du trafic réseau.
 
 Cette configuration permet de mieux comprendre le fonctionnement du routage personnalisé dans Azure et le rôle d'une appliance réseau dans le chemin de communication.
 
-📸 Capture : configuration de la route personnalisée.
+<img width="1160" height="936" alt="image" src="https://github.com/user-attachments/assets/1c334ad6-c78b-4440-9f17-16cf3504aae1" />
 
-9. Association de la table de routage au sous-réseau
+8. Association de la table de routage au sous-réseau
 
 Association de la Route Table au sous-réseau concerné.
 
@@ -133,46 +121,28 @@ Chemin :
 
 Réseau virtuel → Sous-réseaux → Sous-réseau concerné → Table de routage
 
-📸 Capture : table de routage associée au sous-réseau.
-
-10. Vérification finale du routage
-
-Vérification de la configuration finale à l'aide des outils de diagnostic réseau Azure.
-
-Contrôles effectués :
-
-réseaux virtuels ;
-sous-réseaux ;
-VNet Peering ;
-connectivité entre les machines virtuelles ;
-Network Watcher ;
-Route Table ;
-User Defined Route ;
-association de la table de routage.
-
-📸 Capture : vue finale de l'infrastructure réseau.
+<img width="1135" height="934" alt="image" src="https://github.com/user-attachments/assets/6799a692-96f7-4f1f-8489-ef7ad41050a4" />
 
 ## Comparaison des éléments
-Élément	Utilisation
-Virtual Network	Créer un réseau virtuel Azure
-Subnet	Diviser le réseau virtuel
-VNet Peering	Connecter deux réseaux virtuels
-Network Watcher	Diagnostiquer et analyser le réseau
-Route Table	Définir des routes personnalisées
-UDR	Contrôler le chemin du trafic
-Next Hop	Définir la prochaine destination du trafic
-Résultat
+- Élément	Utilisation
+- Virtual Network	Créer un réseau virtuel Azure
+- Subnet	Diviser le réseau virtuel
+- VNet Peering	Connecter deux réseaux virtuels
+- Network Watcher	Diagnostiquer et analyser le réseau
+- Route Table	Définir des routes personnalisées
+- UDR	Contrôler le chemin du trafic
+- Résultat
 
 Ce lab m'a permis de mettre en pratique plusieurs éléments de la connectivité réseau Azure :
 
-création de réseaux virtuels ;
-création de sous-réseaux ;
-déploiement de machines virtuelles ;
-mise en place du VNet Peering ;
-test de la connectivité réseau ;
-utilisation de Network Watcher ;
-création de tables de routage ;
-configuration de routes personnalisées.
+- création de réseaux virtuels ;
+- création de sous-réseaux ;
+- déploiement de machines virtuelles ;
+- mise en place du VNet Peering ;
+- test de la connectivité réseau ;
+- utilisation de Network Watcher ;
+- création de tables de routage ;
+- configuration de routes personnalisées.
 
 ## Ce que j'ai appris
 
