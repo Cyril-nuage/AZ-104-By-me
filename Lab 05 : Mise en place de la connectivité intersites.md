@@ -21,16 +21,7 @@ Configuration d'une User Defined Route (UDR)
 Analyse du routage Azure
 Vérification de la connectivité entre réseaux
 
-## Environnement
-Élément	Configuration
-Cloud	Microsoft Azure
-Interface	Portail Azure
-Réseau	Azure Virtual Network
-Connectivité	VNet Peering
-Routage	Route Table / UDR
-Diagnostic	Network Watcher
-Environnement	Lab personnel
-Réalisation
+## Realisation
 
 1. Création de la machine virtuelle CoreServicesVM
 
