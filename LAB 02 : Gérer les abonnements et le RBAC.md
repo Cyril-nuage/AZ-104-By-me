@@ -17,15 +17,6 @@ Gestion des étiquettes
 Verrous de ressources
 Contrôle de conformité
 Principe du moindre privilège
-## Environnement
-Élément	Configuration
-Cloud	Microsoft Azure
-Identités	Microsoft Entra ID
-Contrôle d’accès	Azure RBAC
-Gouvernance	Azure Policy
-Protection	Verrous de ressources
-Interface	Portail Azure
-Environnement	Lab personnel
 ## Réalisation
 **1. Organisation avec les groupes d’administration**
 
