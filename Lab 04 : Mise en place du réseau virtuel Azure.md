@@ -9,14 +9,14 @@ Mettre en place et sécuriser un réseau virtuel Azure.
 L'objectif est de créer des réseaux virtuels, des sous-réseaux et des règles de sécurité, puis de configurer le DNS Azure.
 
 ## Compétences mises en pratique
-Création d'un réseau virtuel
-Création de sous-réseaux
-Déploiement avec un modèle ARM
-Gestion des NSG
-Gestion des ASG
-Création de règles réseau
-Configuration d'Azure DNS
-Vérification de la configuration réseau
+- Création d'un réseau virtuel
+- Création de sous-réseaux
+- Déploiement avec un modèle ARM
+- Gestion des NSG
+- Gestion des ASG
+- Création de règles réseau
+- Configuration d'Azure DNS
+- Vérification de la configuration réseau
 # Réalisation
 
 **1. Création du réseau virtuel et des sous réseaux**
