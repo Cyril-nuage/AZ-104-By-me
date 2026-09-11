@@ -17,14 +17,6 @@ Gestion des ASG
 Création de règles réseau
 Configuration d'Azure DNS
 Vérification de la configuration réseau
-## Environnement
-Élément	Configuration
-Cloud	Microsoft Azure
-Interface	Portail Azure
-Réseau	Azure Virtual Network
-Sécurité	NSG / ASG
-DNS	Azure DNS
-Environnement	Lab personnel
 # Réalisation
 
 **1. Création du réseau virtuel et des sous réseaux**
