@@ -24,10 +24,10 @@ Chemin :
 
 Configuration principale :
 
-Nom : usr-tech01
-Job title : IT Lab Administrator
-Department : IT
-Compte : Activé
+Nom : usr-tech01;
+Job title : IT Lab Administrator;
+Department : IT;
+Compte : Activé;
 
 <img width="1213" height="1062" alt="Capture d&#39;écran 2026-08-27 151408" src="https://github.com/user-attachments/assets/11384696-5d82-4bdf-bade-f2b5c4a3e2aa" />
 
