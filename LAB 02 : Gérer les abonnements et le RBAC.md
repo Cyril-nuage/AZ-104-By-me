@@ -7,16 +7,16 @@ AZ-104 — Microsoft Azure Administrator
 Mettre en pratique la gouvernance Azure et la gestion des accès à travers Microsoft Entra ID, Azure RBAC, Azure Policy, les étiquettes et les verrous de ressources.
 
 ## Compétences mises en pratique
-Organisation des ressources Azure
-Groupes d’administration
-Azure RBAC
-Création de rôles personnalisés
-Attribution de rôles
-Azure Policy
-Gestion des étiquettes
-Verrous de ressources
-Contrôle de conformité
-Principe du moindre privilège
+- Organisation des ressources Azure
+- Groupes d’administration
+- Azure RBAC
+- Création de rôles personnalisés
+- Attribution de rôles
+- Azure Policy
+- Gestion des étiquettes
+- Verrous de ressources
+- Contrôle de conformité
+- Principe du moindre privilège
 ## Réalisation
 **1. Organisation avec les groupes d’administration**
 
