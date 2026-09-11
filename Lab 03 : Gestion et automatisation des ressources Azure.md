@@ -9,14 +9,14 @@ Apprendre à automatiser le déploiement de ressources Azure avec des modèles A
 L'objectif est de comprendre comment créer une ressource, récupérer son modèle, puis réutiliser ce modèle avec différentes méthodes de déploiement.
 
 ## Compétences mises en pratique
-Création d'un modèle ARM
-Modification d'un modèle ARM
-Déploiement de ressources avec un modèle
-Utilisation d'Azure Cloud Shell
-Azure PowerShell
-Azure CLI
-Utilisation de Bicep
-Vérification des déploiements
+- Création d'un modèle ARM
+- Modification d'un modèle ARM
+- Déploiement de ressources avec un modèle
+- Utilisation d'Azure Cloud Shell
+- Azure PowerShell
+- Azure CLI
+- Utilisation de Bicep
+- Vérification des déploiements
 # Réalisation
 
 **1. Création d'un modèle ARM**
