@@ -7,12 +7,12 @@ AZ-104 — Microsoft Azure Administrator
 Mettre en pratique la gestion des identités et des groupes dans Microsoft Entra ID à travers la création d'utilisateurs, l'invitation d'un utilisateur externe et la création d'un groupe de sécurité.
 
 ## Compétences mises en pratique
-Gestion des utilisateurs Microsoft Entra ID
-Gestion des utilisateurs externes (Guest)
-Création et gestion de groupes
-Gestion des membres et propriétaires
-Appartenance de groupe Assigned
-Organisation des identités
+-Gestion des utilisateurs Microsoft Entra ID
+-Gestion des utilisateurs externes (Guest)
+-Création et gestion de groupes
+-Gestion des membres et propriétaires
+-Appartenance de groupe Assigned
+-Organisation des identités
 ## Réalisation
 **1. Création d'un utilisateur**
 
