@@ -17,15 +17,6 @@ Azure PowerShell
 Azure CLI
 Utilisation de Bicep
 Vérification des déploiements
-## Environnement
-Élément	Configuration
-Cloud	Microsoft Azure
-Interface	Portail Azure
-Automatisation	ARM / Bicep
-Terminal	Azure Cloud Shell
-Région	East US
-Groupe de ressources	az104-rg3
-Environnement	Lab personnel
 # Réalisation
 
 **1. Création d'un modèle ARM**
