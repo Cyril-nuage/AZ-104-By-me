@@ -13,12 +13,6 @@ Création et gestion de groupes
 Gestion des membres et propriétaires
 Appartenance de groupe Assigned
 Organisation des identités
-## Environnement
-Élément	Configuration
-Cloud	Microsoft Azure
-Service	Microsoft Entra ID
-Interface	Azure Portal
-Environnement	Lab personnel
 ## Réalisation
 **1. Création d'un utilisateur**
 
