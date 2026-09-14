@@ -29,12 +29,11 @@ captures d'écran.
 | **03** | Machines virtuelles | Azure VM / Managed Disks / VM Scale Sets |
 | **04** | Réseau virtuel | VNet / Subnet / NSG |
 | **05** | Connectivité inter-sites | VNet Peering / VPN Gateway / Network Watcher |
-| **06** | Gestion du trafic réseau | Load Balancer / Traffic Manager / Application Gateway |
-| **07** | Applications Web | App Service / Web Apps |
-| **08** | Protection des données | Azure Backup / Recovery Services Vault / Site Recovery |
-| **09** | Supervision et monitoring | Azure Monitor / Log Analytics / Alerts |
-| **10** | Lab de synthèse — Administration Azure | RBAC / Storage / VM / Réseau / Monitoring |
-| **11** | Lab final — Scénario complet | Architecture Azure complète |
+| **06** | Applications Web | App Service / Web Apps |
+| **07** | Protection des données | Azure Backup / Recovery Services Vault / Site Recovery |
+| **08** | Supervision et monitoring | Azure Monitor / Log Analytics / Alerts |
+| **09** | Lab de synthèse — Administration Azure | RBAC / Storage / VM / Réseau / Monitoring |
+| **10** | Lab final — Scénario complet | Architecture Azure complète |
 
 ## Environnement
 
