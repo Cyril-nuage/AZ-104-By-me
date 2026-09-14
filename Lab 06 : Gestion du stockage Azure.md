@@ -1,4 +1,4 @@
-# Lab 07 — Gestion du stockage Azure
+# Lab 06 — Gestion du stockage Azure
 
 AZ-104 — Microsoft Azure Administrator
 
