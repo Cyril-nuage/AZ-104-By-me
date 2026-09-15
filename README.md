@@ -25,15 +25,15 @@ captures d'écran.
 | Lab | Sujet | Services |
 |---|---|---|
 | **01** | Identités et contrôle d’accès | Entra ID / RBAC |
-| **02** | Stockage Azure | Storage Account / Blob Storage / File Shares |
-| **03** | Machines virtuelles | Azure VM / Managed Disks / VM Scale Sets |
-| **04** | Réseau virtuel | VNet / Subnet / NSG |
-| **05** | Connectivité inter-sites | VNet Peering / VPN Gateway / Network Watcher |
-| **06** | Applications Web | App Service / Web Apps |
-| **07** | Protection des données | Azure Backup / Recovery Services Vault / Site Recovery |
-| **08** | Supervision et monitoring | Azure Monitor / Log Analytics / Alerts |
-| **09** | Lab de synthèse — Administration Azure | RBAC / Storage / VM / Réseau / Monitoring |
-| **10** | Lab final — Scénario complet | Architecture Azure complète |
+| **02** | Gestion des abonnements et gouvernance | Azure RBAC / Azure Policy |
+| **03** | Gestion et automatisation des ressources Azure | Resource Groups / Resource Locks / ARM Templates / Cloud Shell / PowerShell / CLI |
+| **04** | Mise en place du réseau virtuel Azure | VNet / Subnet / NSG / ASG / Azure DNS |
+| **05** | Mise en place de la connectivité intersites | VNet Peering / VPN Gateway / Network Watcher |
+| **06** | Gestion du stockage Azure | Storage Account / Blob Storage / File Shares |
+| **07** | Gestion du trafic et mise à l’échelle | Load Balancer / Traffic Manager / Application Gateway / VM Scale Sets / Managed Disks |
+| **08** | Mise en place des applications web | App Service / Web Apps |
+| **09** | Protection des données | Azure Backup / Recovery Services Vault / Site Recovery |
+| **10** | Supervision et monitoring | Azure Monitor / Log Analytics / Alerts |
 
 ## Environnement
 
