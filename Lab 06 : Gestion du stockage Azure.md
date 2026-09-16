@@ -25,7 +25,7 @@ Création d'un compte de stockage Azure destiné à héberger les données utili
 
 Le groupe de ressources utilisé est :
 
-Nom : AZ-104-LAB07
+Nom : AZ-104-LAB06
 
 Chemin :
 
