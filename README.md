@@ -30,8 +30,8 @@ captures d'écran.
 | **04** | Mise en place du réseau virtuel Azure | VNet / Subnet / NSG / ASG / Azure DNS |
 | **05** | Mise en place de la connectivité intersites | VNet Peering / VPN Gateway / Network Watcher |
 | **06** | Gestion du stockage Azure | Storage Account / Blob Storage / File Shares |
-| **07** | Gestion du trafic et mise à l’échelle | Load Balancer / Traffic Manager / Application Gateway / VM Scale Sets / Managed Disks |
-| **08** | Mise en place des applications web | App Service / Web Apps |
+| **07** | Gestion du trafic et mise à l’échelle | Load Balancer / Traffic Manager / Application Gateway |
+| **08** | Mise en place des applications web | App Service / Web Apps / Deployment Slots / ACI / Container Apps |
 | **09** | Protection des données | Azure Backup / Recovery Services Vault / Site Recovery |
 | **10** | Supervision et monitoring | Azure Monitor / Log Analytics / Alerts |
 
