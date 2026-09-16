@@ -42,4 +42,17 @@ captures d'écran.
 - Azure Portal
 - PowerShell
 - Windows
+- 
+## Technologies et outils
+
+- Microsoft Azure
+- Microsoft Entra ID
+- Azure Portal
+- Azure PowerShell
+- Azure CLI
+- ARM Templates
+- Bicep
+- Azure Monitor
+- Log Analytics
+- GitHub
 
