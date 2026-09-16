@@ -235,4 +235,6 @@ Azure Monitor centralise les fonctionnalités de supervision tandis que Log Anal
 
 # Source
 
-Microsoft Learning — AZ-104 Microsoft Azure Administrator — Lab 11 : Implement Monitoring
+Lab basé sur les exercices pratiques Microsoft Learning — AZ-104 Microsoft Azure Administrator.
+
+Les manipulations ont été réalisées dans mon propre environnement Azure à des fins d'apprentissage.
