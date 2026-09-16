@@ -43,21 +43,21 @@ Création d'une application Web Azure permettant d'héberger une application PHP
 
 Chemin :
 
-Portail Azure → App Services → Créer → Application Web
+**Portail Azure → App Services → Créer → Application Web**
 
 Configuration principale :
 
 Groupe de ressources : AZ-104-LAB8
 Nom : nom unique au niveau mondial
 Publication : Code
-Pile d'exécution : PHP 8.2
+Pile d'exécution : PHP 8.3
 Système d'exploitation : Linux
 Région : région Azure disponible
-Plan tarifaire : Premium V3 P1V3
+Plan tarifaire : Gratuit F1 (1 Go de mémoire)
 
 Valider la configuration puis créer la Web App.
 
-📷 Capture d'écran : configuration principale de l'Azure Web App avant sa création.
+<img width="957" height="983" alt="image" src="https://github.com/user-attachments/assets/89c36949-3607-4bde-b787-c57b9f8b75c1" />
 
 ## 2. Vérification de la Web App
 
@@ -65,13 +65,11 @@ Une fois le déploiement terminé, ouvrir la ressource créée.
 
 Chemin :
 
-Portail Azure → App Services → Nom de la Web App → Vue d'ensemble
+**Portail Azure → App Services → Nom de la Web App → Vue d'ensemble**
 
 Ouvrir le lien du domaine par défaut afin de vérifier que l'application est accessible.
 
-📷 Capture d'écran : page Vue d'ensemble de la Web App avec le domaine par défaut.
-
-📷 Capture d'écran : page Web affichée après l'ouverture du domaine par défaut.
+<img width="1639" height="799" alt="image" src="https://github.com/user-attachments/assets/e935cbc0-2c1d-436f-ab8c-9a205649f656" />
 
 ## 3. Création du slot Staging
 
@@ -79,7 +77,7 @@ Création d'un environnement de préproduction permettant de tester une nouvelle
 
 Chemin :
 
-Web App → Déploiement → Emplacements de déploiement → Ajouter
+**Web App → Déploiement → Emplacements de déploiement → Ajouter**
 
 Configuration :
 
@@ -88,7 +86,8 @@ Cloner les paramètres : Ne pas cloner
 
 Créer le slot puis ouvrir celui-ci.
 
-📷 Capture d'écran : liste des emplacements avec Production et Staging.
+<img width="1140" height="775" alt="image" src="https://github.com/user-attachments/assets/d9ccd2b9-1555-4aa6-9388-1edb7bbac883" />
+<img width="1137" height="411" alt="image" src="https://github.com/user-attachments/assets/8872f651-be6a-45a3-a618-2ab2d12d5235" />
 
 ## 4. Vérification du slot Staging
 
@@ -96,11 +95,11 @@ Vérification de la présence du nouvel environnement et de son domaine spécifi
 
 Chemin :
 
-Web App → Déploiement → Emplacements de déploiement → staging
+**Web App → Déploiement → Emplacements de déploiement → staging**
 
 Le slot Staging possède une URL différente de celle de la production.
 
-📷 Capture d'écran : Vue d'ensemble du slot staging avec son domaine.
+<img width="1141" height="983" alt="image" src="https://github.com/user-attachments/assets/8c413541-8d3f-401c-8619-5bd0620dd925" />
 
 ## 5. Configuration du déploiement depuis GitHub
 
@@ -108,13 +107,13 @@ Activation des paramètres nécessaires afin de permettre le déploiement de l'a
 
 Chemin :
 
-Slot staging → Configuration → Paramètres généraux
+**Slot staging → Configuration → Paramètres généraux**
 
 Activer l'authentification de base SCM si elle est désactivée puis appliquer les modifications.
 
 Ensuite :
 
-Slot staging → Centre de déploiement → Paramètres
+**Slot staging → Centre de déploiement → Paramètres**
 
 Configurer :
 
@@ -123,8 +122,7 @@ Dépôt : https://github.com/Azure-Samples/php-docs-hello-world
 Branche : master
 
 Enregistrer la configuration.
-
-📷 Capture d'écran : configuration du Centre de déploiement avec le dépôt GitHub.
+<img width="813" height="628" alt="image" src="https://github.com/user-attachments/assets/ced9888b-a917-4855-bd92-29e74b9098ad" />
 
 ## 6. Vérification du déploiement Staging
 
@@ -132,11 +130,11 @@ Attendre la fin du déploiement puis ouvrir le domaine du slot staging.
 
 Chemin :
 
-Slot staging → Vue d'ensemble → Domaine par défaut
+**Slot staging → Vue d'ensemble → Domaine par défaut**
 
 Vérifier que la page Hello World est affichée.
 
-📷 Capture d'écran : application Hello World affichée sur le slot staging.
+<img width="1919" height="1014" alt="image" src="https://github.com/user-attachments/assets/60402f38-f88e-46b5-a96d-0d41e71b7f17" />
 
 ## 7. Passage de Staging vers Production
 
@@ -144,13 +142,13 @@ Une fois l'application validée dans l'environnement Staging, effectuer l'échan
 
 Chemin :
 
-Web App → Déploiement → Emplacements de déploiement → Swap
+**Web App → Déploiement → Emplacements de déploiement → Swap**
 
 Vérifier les paramètres puis sélectionner Start Swap.
 
 Attendre la fin de l'opération.
 
-📷 Capture d'écran : fenêtre de configuration du Swap avant son lancement.
+<img width="1141" height="983" alt="image" src="https://github.com/user-attachments/assets/47563c8f-c966-4433-89e4-46cb35da8fee" />
 
 ## 8. Vérification de la Production
 
@@ -158,30 +156,46 @@ Ouvrir la Web App en production et vérifier que l'application précédemment te
 
 Chemin :
 
-App Services → Web App → Vue d'ensemble → Domaine par défaut
+**App Services → Web App → Vue d'ensemble → Domaine par défaut**
 
-📷 Capture d'écran : application Hello World accessible depuis le domaine de production.
+<img width="1913" height="1013" alt="image" src="https://github.com/user-attachments/assets/dcb6e459-c8a7-4441-b8ec-792cfa4c3b7c" />
 
 ## 9. Configuration de la mise à l'échelle automatique
 
-Configuration de l'autoscaling afin que la Web App puisse adapter automatiquement ses ressources en fonction de la charge.
+Configuration de l'autoscaling afin que la Web App puisse adapter automatiquement le nombre d'instances en fonction de la charge.
 
 Chemin :
 
-Web App → Mise à l'échelle
+**Web App → Mise à l'échelle**
 
-Sélectionner le mode :
+Dans la section **Mise à l'échelle**, sélectionner :
 
-Automatic
+**Basé sur des règles**
 
 Configuration principale :
 
 Nombre minimal d'instances : 1
-Maximum burst : 2
+Nombre maximal d'instances : 3
+Nombre d'instances par défaut : 1
+
+Ajouter une règle de scale-out :
+
+Métrique : Pourcentage du processeur
+Condition : Supérieur à 70 %
+Durée : 10 minutes
+Action : Augmenter le nombre d'instances de 1
+
+Ajouter une règle de scale-in :
+
+Métrique : Pourcentage du processeur
+Condition : Inférieur à 20 %
+Durée : 10 minutes
+Action : Diminuer le nombre d'instances de 1
 
 Enregistrer les modifications.
 
-📷 Capture d'écran : configuration de la mise à l'échelle automatique.
+<img width="1141" height="983" alt="image" src="https://github.com/user-attachments/assets/49b06315-428b-4f46-9064-aadfece84cd9" />
+<img width="1139" height="982" alt="image" src="https://github.com/user-attachments/assets/e2acf216-669c-470b-a353-cc183dcc8174" />
 
 ## 10. Test de charge de la Web App
 
@@ -189,21 +203,41 @@ Création d'un test de charge permettant de générer des requêtes vers l'appli
 
 Chemin :
 
-Web App → Diagnostiquer et résoudre les problèmes → Tester la charge de votre application → Créer un test de charge
+**Web App → Diagnostiquer et résoudre les problèmes → Tester la charge de votre application → Créer un test de charge**
 
-Créer le test puis ajouter une requête HTTP.
+Sélectionner **+ Créer** puis donner un nom unique au test.
 
-Utiliser l'URL du domaine de production de la Web App.
+Sélectionner **Vérifier + créer**, puis **Créer**.
 
-Vérifier notamment :
+Attendre la création du test puis sélectionner **Accéder à la ressource**.
+
+Depuis la page **Vue d'ensemble**, dans **Créer en ajoutant des requêtes HTTP**, sélectionner **Créer**.
+
+Dans l'onglet **Plan de test**, sélectionner **Ajouter une requête**.
+
+Dans le champ **URL**, saisir le **Domaine par défaut** de la Web App.
+
+L'URL doit commencer par :
+
+`https://`
+
+Sélectionner **Ajouter** pour enregistrer la requête.
+
+Sélectionner **Vérifier + créer**, puis **Créer**.
+
+Une fois le test créé, l'ouvrir puis lancer le test.
+
+Actualiser les données et vérifier notamment :
 
 Utilisateurs virtuels
 Temps de réponse
 Requêtes par seconde
 
-📷 Capture d'écran : configuration de la requête HTTP du test de charge.
+<img width="1142" height="1013" alt="image" src="https://github.com/user-attachments/assets/73507c56-6971-4862-95ab-84cb99a806d8" />
 
-📷 Capture d'écran : métriques du test de charge en cours.
+<img width="1141" height="997" alt="image" src="https://github.com/user-attachments/assets/a65ea870-d774-4c09-b594-fc74a80cc30d" />
+
+Une fois les métriques observées, sélectionner **Arrêter**, puis confirmer avec **Arrêter**.
 
 ---
 
@@ -215,7 +249,7 @@ Déploiement d'une application Web conteneurisée à partir d'une image Docker.
 
 Chemin :
 
-Portail Azure → Instances de conteneurs → Créer
+**Portail Azure → Instances de conteneurs → Créer**
 
 Configuration principale :
 
@@ -226,83 +260,57 @@ Source de l'image : Images de démarrage rapide
 Image : mcr.microsoft.com/azuredocs/aci-helloworld:latest
 Système d'exploitation : Linux
 
-📷 Capture d'écran : configuration principale de l'Azure Container Instance.
+<img width="922" height="974" alt="image" src="https://github.com/user-attachments/assets/e9afa631-627e-4862-81e9-bd81c11fdb3a" />
 
-## 12. Configuration de l'accès réseau
-
-Configurer un nom DNS public permettant d'accéder directement au conteneur depuis Internet.
-
-Chemin :
-
-Créer une instance de conteneur → Mise en réseau
-
-Configuration :
-
-Étiquette de nom DNS : nom unique
-
-L'application sera accessible via un nom DNS Azure associé à la région sélectionnée.
-
-📷 Capture d'écran : configuration du nom DNS de l'instance.
+Dans **Mise en réseau**, configurer une **étiquette de nom DNS** unique afin de rendre l'application accessible depuis Internet.
 
 Valider puis créer l'instance.
 
-## 13. Vérification de l'Azure Container Instance
+## 12. Vérification et test de l'Azure Container Instance
 
 Attendre la fin du déploiement puis ouvrir la ressource.
 
 Chemin :
 
-Instance de conteneur → az104-c1 → Vue d'ensemble
+**Instance de conteneur → az104-c1 → Vue d'ensemble**
 
 Vérifier que l'état de l'instance est :
 
-Running
+**Running**
 
-📷 Capture d'écran : Vue d'ensemble de l'instance avec l'état Running.
-
-## 14. Test de l'application conteneurisée
-
-Récupérer le nom de domaine complet de l'instance puis l'ouvrir dans un navigateur.
-
-Chemin :
-
-Instance de conteneur → Vue d'ensemble → FQDN
-
-Ouvrir l'adresse dans un nouvel onglet.
+Récupérer ensuite le **FQDN** et l'ouvrir dans un navigateur.
 
 Vérifier que la page :
 
-Welcome to Azure Container Instance
+**Welcome to Azure Container Instance**
 
 est affichée.
 
-📷 Capture d'écran : page Web de l'Azure Container Instance.
+<img width="1919" height="772" alt="image" src="https://github.com/user-attachments/assets/2a4eb60e-6493-4116-92a5-d56b7e5da893" />
 
-## 15. Vérification des journaux
+## 13. Vérification des journaux
 
-Effectuer plusieurs actualisations de la page afin de générer des requêtes HTTP.
+Actualiser plusieurs fois la page Web afin de générer des requêtes HTTP.
 
-Puis consulter les journaux du conteneur.
+Puis consulter :
 
-Chemin :
+**Instance de conteneur → Conteneurs → Journaux**
 
-Instance de conteneur → Conteneurs → Journaux
+Vérifier la présence des requêtes générées.
 
-Vérifier la présence des requêtes HTTP générées lors de l'accès à l'application.
-
-📷 Capture d'écran : journaux du conteneur contenant les requêtes HTTP.
+<img width="1136" height="798" alt="image" src="https://github.com/user-attachments/assets/edc6f10c-18a0-4c2b-a49f-c36563064fa3" />
 
 ---
 
 # Partie 3 — Azure Container Apps
 
-## 16. Création d'une Azure Container App
+## 14. Création et configuration d'une Azure Container App
 
 Déploiement d'une application conteneurisée avec Azure Container Apps afin d'utiliser une solution PaaS sans gérer directement l'infrastructure sous-jacente.
 
 Chemin :
 
-Portail Azure → Container Apps → Créer → Container App
+**Portail Azure → Container Apps → Créer → Container App**
 
 Configuration principale :
 
@@ -316,15 +324,11 @@ Nom de l'environnement :
 
 my-environment
 
-📷 Capture d'écran : configuration principale de la Container App.
-
-## 17. Configuration de l'image du conteneur
-
 Configurer l'image de démonstration fournie par Azure.
 
 Chemin :
 
-Container App → Conteneur
+**Container App → Conteneur**
 
 Activer :
 
@@ -336,39 +340,35 @@ Simple hello world container
 
 Vérifier les paramètres d'accès à l'application puis poursuivre la création.
 
-📷 Capture d'écran : configuration du conteneur avec l'image Simple hello world container.
-
-## 18. Création et déploiement de la Container App
-
 Vérifier la configuration puis lancer le déploiement.
 
 Chemin :
 
-Container App → Vérifier + créer → Créer
+**Container App → Vérifier + créer → Créer**
 
 Attendre la fin du déploiement.
 
-📷 Capture d'écran : validation finale de la Container App avant création.
+<img width="773" height="985" alt="image" src="https://github.com/user-attachments/assets/1c696d58-3585-42f8-b0ff-2a91d2b54a20" />
 
-## 19. Vérification de l'Azure Container App
+## 15. Vérification de l'Azure Container App
 
 Une fois le déploiement terminé, ouvrir la ressource.
 
 Chemin :
 
-Container Apps → my-app → Vue d'ensemble
+**Container Apps → my-app → Vue d'ensemble**
 
 Récupérer l'URL de l'application.
 
-📷 Capture d'écran : Vue d'ensemble de la Container App avec l'Application URL.
+<img width="1129" height="316" alt="image" src="https://github.com/user-attachments/assets/6b5f72cd-5265-4733-9dfe-430a36564b49" />
 
-## 20. Test de l'application
+## 16. Test de l'application
 
 Ouvrir l'Application URL dans un navigateur.
 
 Vérifier que la page de démonstration confirme que la Container App fonctionne.
 
-📷 Capture d'écran : page Hello World de l'Azure Container App.
+<img width="819" height="619" alt="image" src="https://github.com/user-attachments/assets/86244dc5-5638-441b-91f8-4dee208c3547" />
 
 ## Résultat
 
