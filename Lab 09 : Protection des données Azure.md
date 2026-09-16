@@ -233,4 +233,6 @@ Azure Site Recovery complète cette protection en permettant de répliquer les m
 
 ## Source
 
-Microsoft Learning — AZ-104 Microsoft Azure Administrator
+Lab basé sur les exercices pratiques Microsoft Learning — AZ-104 Microsoft Azure Administrator.
+
+Les manipulations ont été réalisées dans mon propre environnement Azure à des fins d'apprentissage.
