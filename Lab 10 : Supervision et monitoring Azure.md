@@ -4,237 +4,257 @@ AZ-104 — Microsoft Azure Administrator
 
 # Objectif
 
-Mettre en place et utiliser les outils de supervision Azure afin de surveiller les performances, l'état et les activités des ressources.
+Mettre en place et utiliser les outils de supervision Azure afin de surveiller les ressources et détecter les changements importants dans l'environnement.
 
-L'objectif est d'utiliser Azure Monitor et Log Analytics pour collecter, analyser et exploiter les données de supervision d'une machine virtuelle Azure.
+L'objectif est d'utiliser Azure Monitor et Log Analytics pour collecter et analyser les données d'une machine virtuelle, créer une alerte basée sur le journal d'activité et configurer les notifications associées.
 
 ## Compétences mises en pratique
 
-- Création d'un espace de travail Log Analytics
+- Déploiement d'une machine virtuelle Azure
 - Configuration d'Azure Monitor
-- Supervision d'une machine virtuelle
-- Configuration des paramètres de diagnostic
-- Analyse des métriques Azure
-- Analyse des journaux avec Log Analytics
+- Utilisation d'un espace de travail Log Analytics
+- Utilisation d'Azure Monitor Agent
+- Configuration d'une Data Collection Rule
+- Analyse des données avec Log Analytics
 - Utilisation de requêtes KQL
-- Consultation du journal d'activité
-
-## Environnement
-
-- Azure Portal
-- Azure Monitor
-- Log Analytics
-- Azure Virtual Machines
-- Azure Activity Log
-- Groupe de ressources : `AZ-104-LAB10`
+- Création d'un groupe d'actions
+- Création d'une alerte du journal d'activité
+- Configuration d'une règle de traitement des alertes
+- Vérification du déclenchement d'une alerte
 
 ## Réalisation
 
-### 1. Création de l'environnement de supervision
+### 1. Déploiement de l'infrastructure du laboratoire
 
-Déploiement de l'environnement nécessaire au laboratoire.
+Déploiement d'une machine virtuelle et des ressources nécessaires à la collecte des données de supervision.
 
-☀️ Chemin :
+Chemin :
 
-**Portail Azure → Déployer un modèle personnalisé**
+**Portail Azure → Déployer un modèle personnalisé → Créer votre propre modèle dans l'éditeur**
 
-Utiliser le modèle ARM fourni avec le laboratoire Microsoft.
+Utiliser le fichier `az104-11-vm-template.json` fourni avec le laboratoire Microsoft.
 
 Configuration principale :
 
 - Groupe de ressources : `AZ-104-LAB10`
 - Région : région Azure disponible
+- Taille de VM : `Standard_D2s_v5` si disponible
 - Nom d'utilisateur : `localadmin`
 - Mot de passe : mot de passe complexe
 
-Le déploiement crée notamment une machine virtuelle et les ressources nécessaires à sa supervision.
+Le déploiement crée notamment :
 
-📷 Capture d'écran : ressources déployées dans `AZ-104-LAB10`.
+- Une machine virtuelle `az104-vm0`
+- Un espace de travail Log Analytics
+- Une Data Collection Rule
+- Un réseau virtuel
+- Une interface réseau
+- Une adresse IP publique
+- Un groupe de sécurité réseau
+- Un compte de stockage
 
-### 2. Création de l'espace de travail Log Analytics
+<img width="2136" height="2013" alt="image" src="https://github.com/user-attachments/assets/d19f54dd-ea3f-4c26-bd92-28d9182cf3a2" />
 
-Création d'un espace de travail permettant de centraliser et d'analyser les données de supervision.
+### 2. Vérification de la supervision de la machine virtuelle
 
-☀️ Chemin :
+Vérification que les composants nécessaires à la collecte des données sont correctement configurés.
 
-**Portail Azure → Espaces de travail Log Analytics → Créer**
+Chemin :
+
+**Machine virtuelle → Paramètres → Extensions + applications**
+
+Vérifier que l'extension :
+
+**AzureMonitorWindowsAgent**
+
+possède le statut **Provisioning succeeded**.
+
+Chemin :
+
+**Data Collection Rule → Configuration → Ressources**
+
+Vérifier que la machine virtuelle `az104-vm0` est associée à la Data Collection Rule.
+
+<img width="1067" height="334" alt="image" src="https://github.com/user-attachments/assets/d90013ef-ff5e-4732-b841-54e4b1736c45" />
+<img width="1061" height="323" alt="image" src="https://github.com/user-attachments/assets/4c5bcb19-8e33-400e-8882-e5dc2c6ce50f" />
+
+### 3. Vérification des données avec Log Analytics
+
+Vérification que l'agent Azure Monitor envoie correctement les données de supervision vers Log Analytics.
+
+Chemin :
+
+**Espace de travail Log Analytics → Journaux**
+
+Utiliser une requête KQL permettant de vérifier les signaux de présence de la machine virtuelle.
+
+Requête :
+
+`Heartbeat | where TimeGenerated > ago(30m) | where Computer =~ "az104-vm0" | summarize HeartbeatCount = count(), LastHeartbeat = max(TimeGenerated) by Computer, Category`
+
+Vérifier que les résultats contiennent `az104-vm0`.
+
+📷 Capture d'écran : requête KQL et résultats contenant `az104-vm0`.
+
+Effectuer ensuite une requête permettant de vérifier les données de performance de la machine virtuelle.
+
+Requête :
+
+`InsightsMetrics | where TimeGenerated > ago(30m) | where Computer =~ "az104-vm0" | where Name == "UtilizationPercentage" | summarize AverageUtilization = avg(Val) by bin(TimeGenerated, 5m), Computer | render timechart`
+
+<img width="1047" height="937" alt="image" src="https://github.com/user-attachments/assets/db0169fa-8d0d-4ec5-a6ba-9f570d382dd8" />
+
+### 4. Création d'un groupe d'actions
+
+Création d'un groupe d'actions permettant d'envoyer une notification lorsqu'une alerte est déclenchée.
+
+Chemin :
+
+**Portail Azure → Monitor → Alertes → Groupes d'actions → Créer**
 
 Configuration principale :
 
 - Groupe de ressources : `AZ-104-LAB10`
-- Nom : nom unique
-- Région : même région que l'environnement de supervision
+- Région : `Global`
+- Nom du groupe d'actions : `Alert the operations team`
+- Nom d'affichage : `AlertOpsTeam`
+
+Ajouter une notification :
+
+- Type : **E-mail/SMS/Push/Voix**
+- Nom : `VM was deleted`
+- Notification : **E-mail**
+- Adresse e-mail : adresse e-mail utilisée
 
 Sélectionner **Vérifier + créer**, puis **Créer**.
 
-📷 Capture d'écran : création de l'espace de travail Log Analytics.
+<img width="1062" height="984" alt="image" src="https://github.com/user-attachments/assets/1940e32e-e489-42a0-9a69-d600ba60babb" />
+<img width="506" height="219" alt="image" src="https://github.com/user-attachments/assets/5ec704e7-2bef-4d5a-b935-c01af4cfecb8" />
 
-### 3. Vérification de la supervision de la machine virtuelle
+Vérifier également la réception de l'e-mail confirmant l'ajout au groupe d'actions.
 
-Consultation des fonctionnalités de supervision disponibles pour la machine virtuelle.
+### 5. Création d'une alerte du journal d'activité
 
-☀️ Chemin :
+Création d'une alerte permettant de détecter la suppression d'une machine virtuelle.
 
-**Machine virtuelle → Supervision**
+Chemin :
 
-Consulter notamment :
+**Azure Monitor → Alertes → Créer → Règle d'alerte**
 
-- Métriques
-- Journaux
-- Insights
-- Alertes
+Dans **Étendue**, sélectionner l'abonnement Azure utilisé.
 
-Vérifier les informations disponibles concernant l'utilisation du processeur, de la mémoire et du réseau.
+Dans **Condition**, sélectionner :
 
-📷 Capture d'écran : supervision de la machine virtuelle avec les métriques disponibles.
+**Journal d'activité**
 
-### 4. Configuration des paramètres de diagnostic
+Puis sélectionner le signal :
 
-Configuration des paramètres permettant d'envoyer les journaux de la machine virtuelle vers Log Analytics.
+**Delete Virtual Machine (Virtual Machines)**
 
-☀️ Chemin :
+L'opération correspond à :
 
-**Machine virtuelle → Supervision → Paramètres de diagnostic**
+`Microsoft.Compute/virtualMachines/delete`
 
-Créer ou modifier un paramètre de diagnostic.
+Dans **Actions**, sélectionner le groupe d'actions :
 
-Sélectionner l'espace de travail Log Analytics créé précédemment comme destination.
+`Alert the operations team`
 
-Enregistrer la configuration.
+Dans **Détails**, configurer :
 
-📷 Capture d'écran : paramètre de diagnostic associé à Log Analytics.
+- Groupe de ressources : `AZ-104-LAB10`
+- Nom de la règle : `VM was deleted`
+- Description : `A VM in the subscription was deleted`
+- Région : `Global`
+- Activer la règle lors de sa création : Oui
 
-### 5. Analyse des métriques avec Azure Monitor
+Sélectionner **Vérifier + créer**, puis **Créer**.
 
-Utilisation de Metrics Explorer pour analyser les performances de la machine virtuelle.
+<img width="782" height="886" alt="image" src="https://github.com/user-attachments/assets/6c1d54f4-7887-46fe-a286-685dc959ed00" />
 
-☀️ Chemin :
+Chemin :
 
-**Machine virtuelle → Supervision → Métriques**
+**Azure Monitor → Alertes → Règles d'alerte**
 
-Sélectionner une métrique telle que :
+Vérifier que la règle `VM was deleted` est active.
 
-**Pourcentage d'utilisation du processeur**
+<img width="1065" height="354" alt="image" src="https://github.com/user-attachments/assets/5d831104-a62b-40c0-b8f2-0894ebf318ea" />
 
-Configurer la période d'analyse puis observer l'évolution de la métrique.
+### 6. Configuration d'une règle de traitement des alertes
 
-📷 Capture d'écran : graphique de métrique Azure Monitor.
+Configuration d'une règle permettant de supprimer les notifications pendant une période de maintenance planifiée.
 
-### 6. Consultation du journal d'activité
+Chemin :
 
-Consultation des opérations effectuées sur les ressources Azure.
+**Azure Monitor → Alertes → Règles de traitement des alertes → Créer**
 
-☀️ Chemin :
+Sélectionner l'abonnement Azure comme portée.
 
-**Portail Azure → Supervision → Journal d'activité**
+Dans les paramètres de la règle :
 
-Filtrer les événements selon :
+**Supprimer les notifications**
 
-- Abonnement
-- Groupe de ressources
-- Ressource
-- Type d'opération
-- Niveau de gravité
+Configurer la période de maintenance :
 
-Vérifier les opérations réalisées sur les ressources du laboratoire.
+- Application de la règle : **À une heure spécifique**
+- Début : aujourd'hui à 22:00
+- Fin : demain à 07:00
+- Fuseau horaire : fuseau horaire local
 
-📷 Capture d'écran : journal d'activité filtré.
+<img width="749" height="749" alt="image" src="https://github.com/user-attachments/assets/3079ffd7-81d2-43c2-9cd3-8f3d54efa902" />
 
-### 7. Analyse des données avec Log Analytics
+Dans les détails :
 
-Ouverture de Log Analytics afin d'interroger les données collectées.
+- Groupe de ressources : `AZ-104-LAB10`
+- Nom : `Planned Maintenance`
+- Description : `Suppress notifications during planned maintenance.`
 
-☀️ Chemin :
+Sélectionner **Vérifier + créer**, puis **Créer**.
 
-**Espace de travail Log Analytics → Journaux**
+### 7. Déclenchement et vérification de l'alerte
 
-Exécuter une requête KQL permettant d'afficher les données disponibles.
+Suppression de la machine virtuelle afin de vérifier que l'alerte du journal d'activité fonctionne correctement.
 
-Requête :
+Avant la suppression, vérifier que la règle `VM was deleted` est activée.
 
-`Heartbeat | summarize count() by Computer`
+Chemin :
 
-Cette requête permet de vérifier les signaux de présence reçus depuis les machines supervisées.
+**Portail Azure → Machines virtuelles → `az104-vm0` → Supprimer**
 
-📷 Capture d'écran : requête KQL et résultats dans Log Analytics.
+Supprimer la machine virtuelle et confirmer la suppression des ressources.
 
-### 8. Analyse des événements de la machine virtuelle
-
-Utilisation de Log Analytics pour rechercher les événements collectés depuis la machine virtuelle.
-
-☀️ Chemin :
-
-**Espace de travail Log Analytics → Journaux**
-
-Exécuter une requête sur les événements disponibles.
-
-Requête :
-
-`Event | where TimeGenerated > ago(1h) | summarize count() by EventLevelName`
-
-Analyser les résultats obtenus et identifier les différents niveaux d'événements.
-
-📷 Capture d'écran : résultats de la requête Log Analytics.
-
-### 9. Consultation des alertes Azure Monitor
-
-Consultation des règles d'alerte et des alertes générées par Azure Monitor.
-
-☀️ Chemin :
-
-**Portail Azure → Supervision → Alertes**
-
-Vérifier les alertes disponibles pour les ressources du laboratoire.
-
-Consulter notamment :
-
-- Ressource concernée
-- Condition
-- Niveau de gravité
-- État de l'alerte
-- Heure de déclenchement
-
-📷 Capture d'écran : page des alertes Azure Monitor.
-
-### 10. Vérification finale de la supervision
-
-Vérification de l'ensemble des composants configurés pendant le laboratoire.
-
-Contrôler que :
-
-- La machine virtuelle est supervisée.
-- Les métriques sont disponibles.
-- Les journaux sont envoyés vers Log Analytics.
-- Les requêtes KQL peuvent être exécutées.
-- Le journal d'activité est accessible.
-- Les alertes Azure Monitor sont consultables.
-
-📷 Capture d'écran : vue finale de la supervision Azure.
+<img width="1067" height="267" alt="image" src="https://github.com/user-attachments/assets/aa7c038f-1b41-4795-a4de-24e23e500cae" />
+<img width="776" height="180" alt="image" src="https://github.com/user-attachments/assets/158839cd-d335-4f92-9052-b4284957105f" />
 
 # Résultat
 
-La machine virtuelle Azure est désormais intégrée à une solution de supervision basée sur **Azure Monitor** et **Log Analytics**.
+La machine virtuelle Azure a été intégrée à une solution de supervision basée sur **Azure Monitor** et **Log Analytics**.
 
-Les métriques, journaux et événements peuvent être consultés et analysés depuis le portail Azure.
+Les données de présence et de performance ont été collectées puis vérifiées à l'aide de requêtes KQL.
+
+Un groupe d'actions et une alerte basée sur le journal d'activité ont été configurés afin de détecter la suppression d'une machine virtuelle et d'envoyer une notification par e-mail.
+
+Une règle de traitement des alertes a également été mise en place afin de supprimer les notifications pendant une période de maintenance planifiée.
 
 # Ce que j'ai appris
 
-- Configurer un espace de travail Log Analytics.
-- Utiliser Azure Monitor pour superviser des ressources.
-- Analyser les métriques d'une machine virtuelle.
-- Consulter le journal d'activité Azure.
-- Collecter et analyser des journaux.
-- Utiliser des requêtes KQL dans Log Analytics.
-- Consulter les alertes Azure Monitor.
+- Déployer une infrastructure Azure destinée à la supervision.
+- Utiliser Azure Monitor et Log Analytics.
+- Vérifier la collecte des données d'une machine virtuelle.
+- Utiliser des requêtes KQL pour analyser les données.
+- Créer un groupe d'actions.
+- Créer une alerte basée sur le journal d'activité.
+- Configurer une règle de traitement des alertes.
+- Vérifier le déclenchement et la notification d'une alerte.
 
 # Approche professionnelle
 
-La supervision permet d'identifier les problèmes de performance, les erreurs et les événements importants affectant les ressources Azure.
+La supervision permet aux administrateurs d'identifier les événements importants et de surveiller l'état des ressources Azure.
 
-Azure Monitor centralise les fonctionnalités de supervision tandis que Log Analytics permet d'effectuer des recherches et analyses avancées sur les données collectées.
+Azure Monitor permet de centraliser la supervision et les alertes, tandis que Log Analytics permet d'analyser les données collectées à l'aide de requêtes KQL.
+
+La mise en place de groupes d'actions et de règles de traitement permet également d'adapter les notifications aux besoins opérationnels et aux périodes de maintenance.
 
 # Source
 
 Lab basé sur les exercices pratiques Microsoft Learning — AZ-104 Microsoft Azure Administrator.
-
 Les manipulations ont été réalisées dans mon propre environnement Azure à des fins d'apprentissage.
