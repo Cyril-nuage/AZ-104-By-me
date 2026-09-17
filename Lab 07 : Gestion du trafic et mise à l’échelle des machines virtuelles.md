@@ -17,6 +17,12 @@ Création et gestion d'un Virtual Machine Scale Set
 Mise à l'échelle automatique des machines virtuelles
 Vérification de la disponibilité des ressources
 
+## ⚠️ Limitation de l'environnement Azure
+
+Ce lab n'a pas pu être réalisé intégralement dans mon environnement Azure Free en raison des limitations de ressources/quota disponibles.
+
+La procédure et les notions présentées correspondent au contenu étudié du lab AZ-104. Certaines manipulations n'ont donc pas pu être accompagnées de captures personnelles.
+
 ## Réalisation
 
 ### 1. Création des ressources réseau
