@@ -1,4 +1,4 @@
-# Lab 09 — Protection des données Azure
+ # Lab 09 — Protection des données Azure
 
 AZ-104 — Microsoft Azure Administrator
 
@@ -18,13 +18,19 @@ L'objectif est de créer un coffre Recovery Services, configurer une stratégie 
 - Configuration d'Azure Site Recovery
 - Réplication d'une machine virtuelle vers une autre région
 
+## ⚠️ Limitation de l'environnement Azure
+
+Ce lab n'a pas pu être réalisé intégralement dans mon environnement Azure Free en raison des limitations de ressources/quota disponibles.
+
+La procédure et les notions présentées correspondent au contenu étudié du lab AZ-104. Certaines manipulations n'ont donc pas pu être accompagnées de captures personnelles.
+
 ## Réalisation
 
 ### 1. Création de la machine virtuelle
 
 Déploiement d'une machine virtuelle qui servira de ressource de test pour la sauvegarde et la réplication.
 
-☀️ Chemin :
+Chemin :
 
 **Portail Azure → Déployer un modèle personnalisé**
 
@@ -37,15 +43,15 @@ Configuration principale :
 - Nom d'utilisateur : `localadmin`
 - Mot de passe : mot de passe complexe
 
-Attendre la fin du déploiement puis vérifier que la machine virtuelle est correctement créée.
+<img width="680" height="980" alt="image" src="https://github.com/user-attachments/assets/d0717a65-581e-4343-8a96-a65b713a6707" />
 
-📷 Capture d'écran : machine virtuelle déployée dans `AZ-104-LAB9`.
+Attendre la fin du déploiement puis vérifier que la machine virtuelle est correctement créée.
 
 ### 2. Création du coffre Recovery Services
 
 Création d'un coffre Recovery Services destiné à stocker les points de récupération de la machine virtuelle.
 
-☀️ Chemin :
+Chemin :
 
 **Portail Azure → Coffres Recovery Services → Créer**
 
@@ -57,13 +63,11 @@ Configuration principale :
 
 Sélectionner **Vérifier + créer**, puis **Créer**.
 
-📷 Capture d'écran : configuration du coffre Recovery Services.
-
 ### 3. Configuration du coffre
 
 Vérification des paramètres de protection du coffre Recovery Services.
 
-☀️ Chemin :
+Chemin :
 
 **Recovery Services Vault → AZ-104-RSV-LAB9 → Paramètres → Propriétés**
 
@@ -73,13 +77,11 @@ Vérifier notamment :
 - Suppression réversible
 - Paramètres de sécurité du coffre
 
-📷 Capture d'écran : propriétés du coffre Recovery Services.
-
 ### 4. Activation de la sauvegarde de la machine virtuelle
 
 Configuration d'une sauvegarde quotidienne de la machine virtuelle.
 
-☀️ Chemin :
+Chemin :
 
 **Recovery Services Vault → Vue d'ensemble → Sauvegarde**
 
@@ -93,13 +95,11 @@ Configuration principale :
 
 Sélectionner ensuite la machine virtuelle créée précédemment puis **Activer la sauvegarde**.
 
-📷 Capture d'écran : stratégie de sauvegarde et machine virtuelle protégée.
-
 ### 5. Lancement d'une sauvegarde à la demande
 
 Lancement manuel d'une sauvegarde afin de vérifier le fonctionnement d'Azure Backup.
 
-☀️ Chemin :
+Chemin :
 
 **Recovery Services Vault → Éléments protégés → Éléments de sauvegarde → Machines virtuelles Azure**
 
@@ -111,13 +111,11 @@ Conserver la durée de rétention proposée puis valider.
 
 Vérifier ensuite que le travail de sauvegarde est créé.
 
-📷 Capture d'écran : sauvegarde à la demande en cours ou terminée.
-
 ### 6. Vérification des travaux de sauvegarde
 
 Vérification de l'état des opérations effectuées par Azure Backup.
 
-☀️ Chemin :
+Chemin :
 
 **Recovery Services Vault → Supervision → Travaux de sauvegarde**
 
@@ -130,13 +128,11 @@ Vérifier notamment :
 - Heure de début
 - Heure de fin
 
-📷 Capture d'écran : travail de sauvegarde terminé.
-
 ### 7. Configuration des paramètres de diagnostic
 
 Activation des journaux permettant de superviser les opérations de sauvegarde et de récupération.
 
-☀️ Chemin :
+Chemin :
 
 **Recovery Services Vault → Supervision → Paramètres de diagnostic**
 
@@ -146,13 +142,11 @@ Configurer ensuite la destination de stockage.
 
 Enregistrer les modifications.
 
-📷 Capture d'écran : paramètres de diagnostic du coffre.
-
 ### 8. Création du coffre de récupération après sinistre
 
 Création d'un coffre Recovery Services destiné à la réplication de la machine virtuelle.
 
-☀️ Chemin :
+Chemin :
 
 **Portail Azure → Coffres Recovery Services → Créer**
 
@@ -164,13 +158,11 @@ Configuration principale :
 
 Sélectionner **Vérifier + créer**, puis **Créer**.
 
-📷 Capture d'écran : création du coffre de récupération après sinistre.
-
 ### 9. Activation de la réplication de la machine virtuelle
 
 Configuration d'Azure Site Recovery afin de répliquer la machine virtuelle vers une autre région Azure.
 
-☀️ Chemin :
+Chemin :
 
 **Machine virtuelle → Opérations → Récupération d'urgence**
 
@@ -188,13 +180,11 @@ Vérifier la configuration puis sélectionner :
 
 Lancer ensuite la réplication.
 
-📷 Capture d'écran : configuration de la réplication de la machine virtuelle.
-
 ### 10. Vérification de la réplication
 
 Vérification de l'état de protection de la machine virtuelle.
 
-☀️ Chemin :
+Chemin :
 
 **Recovery Services Vault → Éléments protégés → Éléments répliqués**
 
@@ -206,8 +196,6 @@ Sélectionner la machine virtuelle et vérifier :
 - Région cible
 
 Attendre la fin de la synchronisation initiale.
-
-📷 Capture d'écran : machine virtuelle répliquée et protégée.
 
 ## Résultat
 
